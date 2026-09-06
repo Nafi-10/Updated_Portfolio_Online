@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | MD Kazi Jawadul Islam</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6.5 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Admin CSS -->
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="frosted-glass-theme">
+
+  <!-- Mesh Gradient Background Elements for Frosted Glass Theme -->
+  <div class="mesh-background">
+    <div class="mesh-orb mesh-orb-indigo"></div>
+    <div class="mesh-orb mesh-orb-emerald"></div>
+    <div class="mesh-orb mesh-orb-rose"></div>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-brand"><i class="fa-solid fa-sliders"></i> Kazi Jawad Admin</div>
+      <div class="sidebar-sub">Portfolio CMS Panel</div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="sidebar-link active" data-panel="home"><i class="fa-solid fa-house"></i> Dashboard Home</a>
+      <a href="#" class="sidebar-link" data-panel="personal"><i class="fa-solid fa-user"></i> Personal Info</a>
+      <a href="#" class="sidebar-link" data-panel="skills"><i class="fa-solid fa-brain"></i> Skills Manager</a>
+      <a href="#" class="sidebar-link" data-panel="experience"><i class="fa-solid fa-calendar"></i> Experience Manager</a>
+      <a href="#" class="sidebar-link" data-panel="education"><i class="fa-solid fa-graduation-cap"></i> Education Manager</a>
+      <a href="#" class="sidebar-link" data-panel="articles"><i class="fa-solid fa-newspaper"></i> Articles Manager</a>
+      <a href="#" class="sidebar-link" data-panel="contact"><i class="fa-solid fa-envelope"></i> Contact Settings</a>
+      <a href="#" class="sidebar-link" data-panel="media"><i class="fa-solid fa-image"></i> Media / Photo</a>
+      <a href="#" class="sidebar-link" data-panel="settings"><i class="fa-solid fa-gear"></i> Site Settings</a>
+
+      <a href="#" class="sidebar-link logout" id="admin-logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+    </nav>
+  </aside>
+
+  <!-- Main View Area -->
+  <main class="admin-main">
+    <header class="admin-header">
+      <div class="admin-header-title" id="admin-header-title">Editing Section: HOME</div>
+      <div class="admin-actions">
+        <a href="../index.html" target="_blank" class="admin-btn admin-btn-secondary"><i class="fa-solid fa-eye"></i> View Site</a>
+        <button onclick="exportJSON()" class="admin-btn admin-btn-primary"><i class="fa-solid fa-download"></i> Export JSON</button>
+      </div>
+    </header>
+
+    <div class="admin-body" id="admin-panel-container">
+      <!-- Dynamic Panel Content Injected by admin.js -->
+    </div>
+  </main>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

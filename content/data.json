@@ -1,0 +1,112 @@
+{
+  "hero": {
+    "name": "MD Kazi Jawadul Islam",
+    "greeting": "Hello, I'm 👋",
+    "tagline": "Passionate about Technology, Research & Innovation",
+    "typedRoles": [
+      "B.Sc Student in Computing & Information System",
+      "AI Enthusiast",
+      "Cyber Security Interested",
+      "IoT Explorer",
+      "Business Analyst at Akand Engineering",
+      "Graphics Designer",
+      "Campus Ambassador"
+    ]
+  },
+  "about": {
+    "photo": "assets/img/Kazi_Jawad.jpg",
+    "bio": "I am MD Kazi Jawadul Islam, a passionate B.Sc student in Computing and Information Systems (CIS) with a Major in Artificial Intelligence at Daffodil International University. I have a strong aspiration to establish a thriving career in the IT industry. I am dedicated and diligent, always ready to embrace new opportunities and overcome obstacles. I am enthusiastic about learning and possess the ability to quickly grasp new concepts.",
+    "infoCards": [
+      { "icon": "fas fa-graduation-cap", "title": "Education", "text": "DIU, CIS - AI Major" },
+      { "icon": "fas fa-map-marker-alt", "title": "Location", "text": "Asulia, Savar, Dhaka" },
+      { "icon": "fas fa-briefcase", "title": "Current Role", "text": "Business Analyst, Akand Eng." },
+      { "icon": "fas fa-heart", "title": "Hobbies", "text": "Music, Research, IoT" }
+    ],
+    "certifications": [
+      "AWS Cloud Foundations",
+      "Destination Expo 2023",
+      "Destination Expo 2024"
+    ]
+  },
+  "socials": {
+    "linkedin": "https://www.linkedin.com/in/kazi-jawad",
+    "instagram": "https://www.instagram.com/_jawadul_islam/",
+    "github": "https://github.com/Nafi-10",
+    "facebook": "https://www.facebook.com/jawadul.islam.14490/",
+    "email": "kazijawadulislam@gmail.com"
+  },
+  "skills": {
+    "technical": [
+      { "name": "HTML & CSS", "percent": 85, "color": "cyan" },
+      { "name": "Python Programming", "percent": 75, "color": "purple" },
+      { "name": "MySQL", "percent": 70, "color": "cyan" },
+      { "name": "Problem Solving", "percent": 80, "color": "purple" },
+      { "name": "Communication", "percent": 90, "color": "cyan", "wide": true }
+    ],
+    "tools": [
+      { "name": "Microsoft Word", "percent": 90, "color": "cyan" },
+      { "name": "Microsoft Excel", "percent": 80, "color": "purple" },
+      { "name": "PowerPoint", "percent": 85, "color": "cyan" },
+      { "name": "VS Code", "percent": 88, "color": "purple" },
+      { "name": "Photoshop", "percent": 75, "color": "cyan", "wide": true }
+    ],
+    "interests": [
+      { "icon": "fas fa-microscope", "label": "Research" },
+      { "icon": "fas fa-shield-alt", "label": "Cyber Security" },
+      { "icon": "fas fa-network-wired", "label": "Internet of Things (IoT)" },
+      { "icon": "fas fa-music", "label": "Music" }
+    ]
+  },
+  "experience": [
+    { "role": "Business Analyst", "org": "Akand Engineering", "date": "April 2026 - Present", "desc": "Analyzing business processes and contributing to engineering solutions." },
+    { "role": "Director of Social Circle", "org": "Study Abroad Forum, Bangladesh", "date": "May 2024 - December 2025", "desc": "Led social initiatives and managed community engagement." },
+    { "role": "Executive Member", "org": "Study Abroad Forum, Bangladesh", "date": "2023 - 2025", "desc": "Supported organizational activities and student outreach programs." },
+    { "role": "Campus Ambassador", "org": "Team Matrix - Elite Hackers", "date": "2023 - 2024", "desc": "Represented the cybersecurity team and promoted tech culture on campus." },
+    { "role": "Graphics Designer", "org": "Study Abroad Forum, Bangladesh", "date": "January 2023 - December 2025", "desc": "Created visual content for social media and events." },
+    { "role": "Participant", "org": "Fun with Code 2.0", "date": "2023", "desc": "Participated in competitive coding event." },
+    { "role": "Participant", "org": "Fun with Code", "date": "2022", "desc": "First competitive coding participation." },
+    { "role": "Bassist", "org": "The Unnamed (Band)", "date": "2019 - 2022", "desc": "Performed as bassist in an independent music band." }
+  ],
+  "education": [
+    { "icon": "fas fa-university", "degree": "B.Sc in Computing & Information System", "major": "Major: Artificial Intelligence", "institution": "Daffodil International University", "year": "2022 - Present", "badge": "B.Sc Student" },
+    { "icon": "fas fa-school", "degree": "HSC in Science", "major": "English Version", "institution": "Islamabad Collegiate College, Khulna", "year": "Completed: 2021", "badge": "GPA: 5.00 / 5.00" },
+    { "icon": "fas fa-graduation-cap", "degree": "SSC in Science", "major": "English Version", "institution": "BAF Shaheen School, Jashore", "year": "Completed: 2018", "badge": "GPA: 4.89 / 5.00" }
+  ],
+  "articles": [
+    {
+      "id": "ai-trends",
+      "title": "Artificial Intelligence in Computing & Systems",
+      "category": "AI",
+      "date": "August 2025",
+      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=600&q=80",
+      "excerpt": "Exploring modern paradigms in machine learning architectures and practical AI applications in business intelligence.",
+      "body": "<h3>Exploring Modern AI Paradigms</h3><p>As a B.Sc student specializing in Artificial Intelligence at Daffodil International University, my research focuses on machine learning architectures, automated reasoning, and practical AI applications in business intelligence.</p><br><h4>Key Takeaways:</h4><ul style=\"margin-left:20px; line-height:1.8;\"><li>• Integration of Deep Learning models in real-time analytics.</li><li>• Business process optimization through automated intelligence.</li><li>• Ethical implications and transparency in automated decision making.</li></ul><br><p>Future development will see enhanced natural language interfaces and domain-specific AI agents transforming organizational efficiency.</p>"
+    },
+    {
+      "id": "iot-security",
+      "title": "Internet of Things (IoT) & Smart Embedded Security",
+      "category": "IoT",
+      "date": "June 2025",
+      "thumbnail": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
+      "excerpt": "Securing connected devices and hardware prototyping with robust embedded cybersecurity protocols.",
+      "body": "<h3>Securing Connected Devices in Smart Environments</h3><p>With the exponential growth of IoT infrastructure, security protocols at the hardware and firmware levels are imperative. My exploration in IoT combines hardware prototyping with robust cybersecurity measures.</p><br><h4>Core Concepts Covered:</h4><ul style=\"margin-left:20px; line-height:1.8;\"><li>• Lightweight cryptography for constrained microcontrollers.</li><li>• Secure MQTT and TLS communication channels.</li><li>• Real-time sensor monitoring with cloud dashboard integration.</li></ul>"
+    },
+    {
+      "id": "cyber-security",
+      "title": "Cyber Security Fundamentals & Campus Ambassador Journey",
+      "category": "Cyber Security",
+      "date": "April 2025",
+      "thumbnail": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80",
+      "excerpt": "Key takeaways from leading cybersecurity awareness sessions and ethical hacking principles with Team Matrix.",
+      "body": "<h3>Building Cyber Awareness & Defensive Skillsets</h3><p>During my tenure as Campus Ambassador for Team Matrix - Elite Hackers, I organized tech sessions to raise cybersecurity awareness and educate peers on threat intelligence, vulnerability assessment, and digital forensics.</p><br><h4>Highlights:</h4><ul style=\"margin-left:20px; line-height:1.8;\"><li>• Network security inspection & packet analysis.</li><li>• Social engineering defenses and user awareness training.</li><li>• Ethical hacking principles and secure software development.</li></ul>"
+    }
+  ],
+  "contact": {
+    "email": "kazijawadulislam@gmail.com",
+    "phone": "01410142580",
+    "location": "Asulia, Savar, Dhaka"
+  },
+  "resume": {
+    "summary": "Diligent and dedicated Computing and Information System student specializing in AI, with professional experience as a Business Analyst at Akand Engineering. Experienced in event management, leadership, graphics design, and cybersecurity campus advocacy."
+  }
+}

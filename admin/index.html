@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | Kazi Jawad Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6.5 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Admin CSS -->
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-login-body frosted-glass-theme">
+
+  <!-- Mesh Gradient Background Elements for Frosted Glass Theme -->
+  <div class="mesh-background">
+    <div class="mesh-orb mesh-orb-indigo"></div>
+    <div class="mesh-orb mesh-orb-emerald"></div>
+    <div class="mesh-orb mesh-orb-rose"></div>
+  </div>
+
+  <div class="login-card">
+    <div class="login-logo">Kazi Jawad</div>
+    <h1 class="login-title">Admin Dashboard Login</h1>
+
+    <div id="login-error" style="display: none; background: rgba(239, 68, 68, 0.2); border: 1px solid #ef4444; color: #f87171; padding: 10px; border-radius: 8px; font-size: 0.85rem; margin-bottom: 20px;"></div>
+
+    <form id="admin-login-form">
+      <div class="admin-form-group">
+        <label class="admin-label" for="username"><i class="fa-solid fa-user"></i> Username</label>
+        <input type="text" id="username" class="admin-input" placeholder="admin" required />
+      </div>
+
+      <div class="admin-form-group">
+        <label class="admin-label" for="password"><i class="fa-solid fa-lock"></i> Password</label>
+        <input type="password" id="password" class="admin-input" placeholder="••••••••" required />
+      </div>
+
+      <button type="submit" class="admin-btn admin-btn-primary" style="width: 100%; margin-top: 10px; padding: 14px;">
+        <i class="fa-solid fa-right-to-bracket"></i> Sign In To Dashboard
+      </button>
+    </form>
+
+    <div style="margin-top: 25px; font-size: 0.8rem; color: var(--text-muted);">
+      Default Credentials: <b>admin</b> / <b>kji2025</b>
+      <br><br>
+      <a href="../index.html" style="color: var(--primary); text-decoration: none;"><i class="fa-solid fa-arrow-left"></i> Back To Public Portfolio</a>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

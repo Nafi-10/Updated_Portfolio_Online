@@ -1,0 +1,136 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "site"
+    label: "Portfolio Website"
+    files:
+      - name: "content"
+        label: "All Website Content"
+        file: "content/data.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Full Name", name: "name", widget: "string" }
+              - { label: "Greeting", name: "greeting", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - label: "Typing Animation Roles"
+                name: "typedRoles"
+                widget: "list"
+                summary: "{{fields.value}}"
+                field: { label: "Role", name: "value", widget: "string" }
+
+          - label: "About Me"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Profile Photo", name: "photo", widget: "image" }
+              - { label: "Bio Paragraph", name: "bio", widget: "text" }
+              - label: "Info Cards"
+                name: "infoCards"
+                widget: "list"
+                summary: "{{fields.title}} — {{fields.text}}"
+                fields:
+                  - { label: "Icon (Font Awesome class)", name: "icon", widget: "string", hint: "e.g. fas fa-graduation-cap" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Text", name: "text", widget: "string" }
+              - label: "Certifications"
+                name: "certifications"
+                widget: "list"
+                summary: "{{fields.value}}"
+                field: { label: "Certification", name: "value", widget: "string" }
+
+          - label: "Social Links"
+            name: "socials"
+            widget: "object"
+            fields:
+              - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }
+              - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+              - { label: "GitHub URL", name: "github", widget: "string", required: false }
+              - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
+              - { label: "Email Address", name: "email", widget: "string" }
+
+          - label: "Skills"
+            name: "skills"
+            widget: "object"
+            fields:
+              - label: "Technical Skills"
+                name: "technical"
+                widget: "list"
+                summary: "{{fields.name}} — {{fields.percent}}%"
+                fields:
+                  - { label: "Skill Name", name: "name", widget: "string" }
+                  - { label: "Percentage", name: "percent", widget: "number", min: 0, max: 100 }
+                  - { label: "Bar Color", name: "color", widget: "select", options: ["cyan", "purple"] }
+                  - { label: "Wide (spans two columns)", name: "wide", widget: "boolean", required: false, default: false }
+              - label: "Tool Skills"
+                name: "tools"
+                widget: "list"
+                summary: "{{fields.name}} — {{fields.percent}}%"
+                fields:
+                  - { label: "Skill Name", name: "name", widget: "string" }
+                  - { label: "Percentage", name: "percent", widget: "number", min: 0, max: 100 }
+                  - { label: "Bar Color", name: "color", widget: "select", options: ["cyan", "purple"] }
+                  - { label: "Wide (spans two columns)", name: "wide", widget: "boolean", required: false, default: false }
+              - label: "Core Interests"
+                name: "interests"
+                widget: "list"
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: "Icon (Font Awesome class)", name: "icon", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+
+          - label: "Experience / Journey Timeline"
+            name: "experience"
+            widget: "list"
+            summary: "{{fields.role}} — {{fields.org}}"
+            fields:
+              - { label: "Role / Title", name: "role", widget: "string" }
+              - { label: "Organization", name: "org", widget: "string" }
+              - { label: "Date Range", name: "date", widget: "string", hint: "e.g. April 2026 - Present" }
+              - { label: "Description", name: "desc", widget: "text" }
+
+          - label: "Education"
+            name: "education"
+            widget: "list"
+            summary: "{{fields.degree}}"
+            fields:
+              - { label: "Icon (Font Awesome class)", name: "icon", widget: "string" }
+              - { label: "Degree", name: "degree", widget: "string" }
+              - { label: "Major / Track", name: "major", widget: "string" }
+              - { label: "Institution", name: "institution", widget: "string" }
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Badge (GPA / Status)", name: "badge", widget: "string" }
+
+          - label: "Articles / Projects"
+            name: "articles"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Article ID (no spaces, unique)", name: "id", widget: "string", hint: "e.g. my-new-article" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Category", name: "category", widget: "select", options: ["AI", "IoT", "Cyber Security", "Python", "Cloud", "General"] }
+              - { label: "Date", name: "date", widget: "string", hint: "e.g. August 2025" }
+              - { label: "Thumbnail Image", name: "thumbnail", widget: "image" }
+              - { label: "Excerpt (short summary shown on card)", name: "excerpt", widget: "text" }
+              - { label: "Full Body (shown in Read More popup)", name: "body", widget: "text", hint: "Basic HTML is supported here, e.g. <h3>, <p>, <ul><li>. Plain text also works fine." }
+
+          - label: "Contact Section"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+
+          - label: "Resume / CV Popup"
+            name: "resume"
+            widget: "object"
+            fields:
+              - { label: "Summary", name: "summary", widget: "text" }

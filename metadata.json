@@ -1,0 +1,6 @@
+{
+  "name": "MD Kazi Jawadul Islam Portfolio",
+  "description": "Personal portfolio website and admin dashboard for MD Kazi Jawadul Islam.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

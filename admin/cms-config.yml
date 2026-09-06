@@ -1,0 +1,33 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "personal"
+    label: "Personal Information"
+    file: "data/portfolio-data.json"
+    fields:
+      - { label: "Full Name", name: "personal.name", widget: "string" }
+      - { label: "Tagline", name: "personal.tagline", widget: "string" }
+      - { label: "About Me", name: "personal.about", widget: "text" }
+      - { label: "Email", name: "personal.email", widget: "string" }
+      - { label: "Phone", name: "personal.phone", widget: "string" }
+      - { label: "Address", name: "personal.address", widget: "string" }
+      - { label: "LinkedIn URL", name: "personal.linkedin", widget: "string" }
+      - { label: "GitHub URL", name: "personal.github", widget: "string" }
+
+  - name: "articles"
+    label: "Articles & Projects"
+    folder: "articles"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Category", name: "category", widget: "select", options: ["AI", "Cyber Security", "IoT", "Business Analysis", "General"] }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Thumbnail Image", name: "thumbnail", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
