@@ -24,6 +24,8 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/articles.css">
+  <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body class="frosted-glass-theme">
 
@@ -62,6 +64,7 @@
       <li><a href="#education" class="nav-link">Education</a></li>
       <li><a href="#quotes" class="nav-link">Quotes</a></li>
       <li><a href="#articles" class="nav-link">Articles</a></li>
+      <li><a href="#gallery" class="nav-link">Gallery</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
     <button class="hamburger" id="hamburger-toggle" aria-label="Toggle navigation">
@@ -81,7 +84,7 @@
       </div>
       <p class="hero-tagline" id="hero-tagline">Passionate about Technology, Research & Innovation</p>
       <div class="hero-buttons">
-        <a href="#about" class="btn btn-outline" id="cv-download-btn"><i class="fa-solid fa-download"></i> Download CV</a>
+        <a href="assets/documents/MD_Kazi_Jawadul_Islam_CV.pdf" download="MD_Kazi_Jawadul_Islam_CV.pdf" type="application/pdf" class="btn btn-outline" id="cv-download-btn"><i class="fa-solid fa-download"></i> Download CV</a>
         <a href="#experience" class="btn btn-primary"><i class="fa-solid fa-briefcase"></i> View My Work</a>
       </div>
     </div>
@@ -438,18 +441,78 @@
     </div>
   </section>
 
-  <!-- [7] ARTICLES / BLOG SECTION -->
-  <section id="articles">
+  <!-- [7] ARTICLES & PROJECTS: INDIVIDUAL DOCUMENTS -->
+  <section id="articles" class="articles-pinterest-section">
     <div class="section-header" data-aos="fade-up">
+      <div class="storehouse-badge">
+        <span class="storehouse-pulse-dot"></span>
+        <span>Research & Ideas</span>
+      </div>
       <h2 class="section-title">Articles & Projects</h2>
-      <p class="section-subtitle">Insights, academic research, and published writing</p>
+      <p class="section-subtitle">Inside the projects: the ideas, the systems, and the details behind them.</p>
     </div>
-    <div class="articles-grid" id="articles-container">
-      <!-- Populated by JS -->
+
+    <div class="article-carousel" id="article-carousel" role="region" aria-roledescription="carousel" aria-label="Project documents">
+      <div class="article-carousel-controls">
+        <button class="article-carousel-arrow" id="article-previous" type="button" aria-label="Previous document" aria-controls="article-columns">←</button>
+        <span class="article-carousel-position" id="article-position" aria-hidden="true">01 / 03</span>
+        <button class="article-carousel-arrow" id="article-next" type="button" aria-label="Next document" aria-controls="article-columns">→</button>
+      </div>
+      <div class="article-columns" id="article-columns"></div>
+      <p class="article-sr-only" id="article-announcement" aria-live="polite" aria-atomic="true"></p>
     </div>
   </section>
 
-  <!-- [8] CONTACT SECTION -->
+  <!-- [8] GALLERY -->
+  <section id="gallery" class="gallery-section" aria-labelledby="gallery-title">
+    <div class="section-header" data-aos="fade-up">
+      <span class="gallery-eyebrow">Moments &amp; Work</span>
+      <h2 class="section-title" id="gallery-title">Gallery</h2>
+      <p class="section-subtitle">A closer look at my projects, experiments, and the person behind them.</p>
+    </div>
+
+    <div class="gallery-carousel" role="region" aria-roledescription="carousel" aria-label="Portfolio gallery">
+      <div class="gallery-stage" id="gallery-stage">
+        <button class="gallery-card" type="button" data-offset="-2" data-caption="A quiet portrait in white." aria-label="Show image: In white">
+          <img src="assets/img/gallery/portrait-in-white.jpg" alt="A portrait in a white panjabi against a warm, softly blurred background." loading="lazy" decoding="async">
+          <span class="gallery-card-shade"></span>
+          <span class="gallery-card-copy"><span class="gallery-card-category">Portraits</span><span class="gallery-card-title">In white</span><span class="gallery-card-action">View image <span aria-hidden="true">↗</span></span></span>
+        </button>
+        <button class="gallery-card" type="button" data-offset="-1" data-caption="A snapshot beside the CIS Project Based Learning display." aria-label="Show image: Campus days">
+          <img src="assets/img/gallery/campus-days.jpg" alt="Standing beside a CIS Project Based Learning sign on a brick wall." loading="lazy" decoding="async">
+          <span class="gallery-card-shade"></span>
+          <span class="gallery-card-copy"><span class="gallery-card-category">Campus</span><span class="gallery-card-title">Campus days</span><span class="gallery-card-action">View image <span aria-hidden="true">↗</span></span></span>
+        </button>
+        <button class="gallery-card is-active" type="button" data-offset="0" data-caption="Bringing code and hardware together in a working project display." aria-label="Open image: Project in action">
+          <img src="assets/img/gallery/project-in-action.jpg" alt="Presenting an electronics prototype with sensors, a keypad, model building, and laptop." loading="lazy" decoding="async">
+          <span class="gallery-card-shade"></span>
+          <span class="gallery-card-copy"><span class="gallery-card-category">Projects</span><span class="gallery-card-title">Project in action</span><span class="gallery-card-action">View image <span aria-hidden="true">↗</span></span></span>
+        </button>
+        <button class="gallery-card" type="button" data-offset="1" data-caption="A walk across the bridge, with green surroundings all around." aria-label="Show image: On the bridge">
+          <img src="assets/img/gallery/on-the-bridge.jpg" alt="An outdoor portrait in sunglasses and a black hoodie on a suspension bridge." loading="lazy" decoding="async">
+          <span class="gallery-card-shade"></span>
+          <span class="gallery-card-copy"><span class="gallery-card-category">Outdoors</span><span class="gallery-card-title">On the bridge</span><span class="gallery-card-action">View image <span aria-hidden="true">↗</span></span></span>
+        </button>
+        <button class="gallery-card" type="button" data-offset="2" data-caption="Taking a moment under the evening sky." aria-label="Show image: Golden hour">
+          <img src="assets/img/gallery/golden-hour.jpg" alt="A seated outdoor portrait beneath a glowing orange sunset sky." loading="lazy" decoding="async">
+          <span class="gallery-card-shade"></span>
+          <span class="gallery-card-copy"><span class="gallery-card-category">Outdoors</span><span class="gallery-card-title">Golden hour</span><span class="gallery-card-action">View image <span aria-hidden="true">↗</span></span></span>
+        </button>
+      </div>
+      <div class="gallery-controls">
+        <button class="gallery-arrow gallery-previous" id="gallery-previous" type="button" aria-label="Previous gallery image" aria-controls="gallery-stage">←</button>
+        <div class="gallery-pagination">
+          <div class="gallery-dots" id="gallery-dots" aria-label="Choose gallery image"></div>
+          <a class="gallery-explore" href="gallery/">Explore More</a>
+        </div>
+        <button class="gallery-arrow gallery-next" id="gallery-next" type="button" aria-label="Next gallery image" aria-controls="gallery-stage">→</button>
+      </div>
+      <p class="gallery-hint">Select a card to explore. Open the center image for a closer look.</p>
+      <p class="gallery-sr-only" id="gallery-status" role="status" aria-live="polite" aria-atomic="true"></p>
+    </div>
+  </section>
+
+  <!-- [9] CONTACT SECTION -->
   <section id="contact">
     <div class="section-header" data-aos="fade-up">
       <h2 class="section-title">Get In Touch</h2>
@@ -496,9 +559,7 @@
 
       <!-- Right: Form -->
       <div class="glass-card" data-aos="fade-left">
-        <form class="contact-form" id="portfolio-contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="contact" />
-          <p style="display:none"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
+        <form class="contact-form" id="portfolio-contact-form" name="contact">
 
           <div class="form-group">
             <label class="form-label" for="contact-name">Your Full Name</label>
@@ -515,10 +576,10 @@
             <textarea id="contact-message" name="message" class="form-textarea" placeholder="How can I help you?" required></textarea>
           </div>
 
-          <div id="contact-form-status" class="form-status"></div>
+          <div id="contact-form-status" class="form-status" role="status"></div>
 
           <button type="submit" class="btn btn-primary" style="width: 100%;">
-            <i class="fa-solid fa-paper-plane"></i> Send Message
+            <i class="fa-solid fa-paper-plane"></i> Open Email App
           </button>
         </form>
       </div>
@@ -537,6 +598,7 @@
         <a href="#education" class="footer-link">Education</a>
         <a href="#quotes" class="footer-link">Quotes</a>
         <a href="#articles" class="footer-link">Articles</a>
+        <a href="#gallery" class="footer-link">Gallery</a>
         <a href="#contact" class="footer-link">Contact</a>
       </div>
       <div class="profile-socials">
@@ -554,6 +616,25 @@
       </div>
     </div>
   </footer>
+
+  <dialog class="gallery-lightbox" id="gallery-lightbox" aria-labelledby="gallery-image-title" aria-describedby="gallery-image-caption">
+    <div class="gallery-lightbox-panel">
+      <button class="gallery-lightbox-close" id="gallery-lightbox-close" type="button" aria-label="Close gallery image" autofocus>×</button>
+      <figure>
+        <img id="gallery-full-image" alt="">
+        <figcaption>
+          <span class="gallery-card-category" id="gallery-image-category"></span>
+          <h3 id="gallery-image-title"></h3>
+          <p id="gallery-image-caption"></p>
+        </figcaption>
+      </figure>
+      <div class="gallery-lightbox-controls">
+        <button class="gallery-arrow" id="gallery-lightbox-previous" type="button" aria-label="Previous full-size image">←</button>
+        <span class="gallery-count" id="gallery-lightbox-count" aria-live="polite"></span>
+        <button class="gallery-arrow" id="gallery-lightbox-next" type="button" aria-label="Next full-size image">→</button>
+      </div>
+    </div>
+  </dialog>
 
   <!-- Article Reader Modal -->
   <div id="article-modal-overlay" class="modal-overlay" onclick="closeArticleModal()">
@@ -574,6 +655,8 @@
   <script src="js/particles-config.js"></script>
   <script src="js/typed-config.js"></script>
   <script src="js/quotes.js"></script>
+  <script src="js/articles.js"></script>
+  <script src="js/gallery.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

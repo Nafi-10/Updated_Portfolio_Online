@@ -114,7 +114,8 @@ function renderAllData(data) {
     });
 
     const cvBtn = document.getElementById('cv-download-btn');
-    if (cvBtn && p.cvUrl) cvBtn.href = p.cvUrl;
+    // Older saved portfolio data used a placeholder; preserve the real download.
+    if (cvBtn && p.cvUrl && !p.cvUrl.startsWith('#')) cvBtn.href = p.cvUrl;
 
     if (p.profilePhoto) {
       const profileImg = document.getElementById('profile-photo-img');
@@ -402,26 +403,8 @@ function renderAllData(data) {
     }
   }
 
-  // Articles
-  if (data.articles && Array.isArray(data.articles)) {
-    const articlesContainer = document.getElementById('articles-container');
-    if (articlesContainer) {
-      articlesContainer.innerHTML = data.articles.map(article => `
-        <div class="glass-card article-card" data-aos="fade-up">
-          <div class="article-thumb-wrapper">
-            <img src="${article.thumbnail || 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80'}" alt="${article.title}" class="article-thumb" />
-            <span class="article-category">${article.category || 'Article'}</span>
-          </div>
-          <div class="article-body">
-            <div class="article-date"><i class="fa-regular fa-calendar"></i> ${article.date}</div>
-            <h3 class="article-title">${article.title}</h3>
-            <p class="article-excerpt">${article.excerpt}</p>
-            <a href="#" class="article-link" onclick="openArticleModal(event, ${article.id})">Read More <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-      `).join('');
-    }
-  }
+  // Articles & Projects: numbered collection columns.
+  renderArticleColumns(Array.isArray(data.articles) ? data.articles : []);
 
   // Typed Strings Init
   if (typeof initTyped === 'function') {
@@ -542,39 +525,18 @@ function initUIComponents(data) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const statusEl = document.getElementById('contact-form-status');
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const formData = new FormData(contactForm);
+      const recipient = data.personal?.email || 'kazijawadulislam@gmail.com';
+      const subject = `Portfolio enquiry from ${formData.get('name')}`;
+      const body = `${formData.get('message')}\n\nFrom: ${formData.get('name')}\nReply to: ${formData.get('email')}`;
+      const emailDraft = `mailto:${encodeURIComponent(recipient)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-      if (submitBtn) submitBtn.disabled = true;
       if (statusEl) {
         statusEl.className = 'form-status';
         statusEl.style.display = 'block';
-        statusEl.textContent = 'Sending message...';
+        statusEl.textContent = `Finish sending in your email app. If it does not open, email ${recipient} directly. Your message has not been sent by this website.`;
       }
-
-      // Handle Netlify / standard form submit simulation or fetch
-      const formData = new FormData(contactForm);
-      fetch('/', {
-        method: 'POST',
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString()
-      })
-      .then(() => {
-        if (statusEl) {
-          statusEl.className = 'form-status success';
-          statusEl.textContent = 'Thank you! Your message has been sent successfully.';
-        }
-        contactForm.reset();
-      })
-      .catch((err) => {
-        if (statusEl) {
-          statusEl.className = 'form-status success'; // Smooth fallback confirmation
-          statusEl.textContent = 'Message sent! Thank you for reaching out.';
-        }
-        contactForm.reset();
-      })
-      .finally(() => {
-        if (submitBtn) submitBtn.disabled = false;
-      });
+      window.location.href = emailDraft;
     });
   }
 
@@ -611,8 +573,17 @@ function initUIComponents(data) {
   }
 }
 
+// Close article modal on Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    if (typeof window.closeArticleModal === 'function') {
+      window.closeArticleModal();
+    }
+  }
+});
+
 /* --------------------------------------------------------------------------
-   4. Article Reader Modal
+   5. Article Reader Modal
    -------------------------------------------------------------------------- */
 window.openArticleModal = async function(event, articleId) {
   event.preventDefault();
@@ -697,7 +668,7 @@ function getDefaultPortfolioData() {
       facebook: "https://www.facebook.com/jawadul.islam.14490/",
       instagram: "https://www.instagram.com/_jawadul_islam/?hl=en",
       github: "https://github.com/Nafi-10",
-      cvUrl: "#",
+      cvUrl: "assets/documents/MD_Kazi_Jawadul_Islam_CV.pdf",
       profilePhoto: "assets/img/profile.jpg"
     }
   };

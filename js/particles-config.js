@@ -1,7 +1,7 @@
 /* Particles.js Configuration for MD Kazi Jawadul Islam Portfolio */
-function initParticles() {
-  if (typeof particlesJS !== 'undefined' && document.getElementById('particles-js')) {
-    particlesJS('particles-js', {
+function initParticles({ elementId = 'particles-js', interactive = true, reducedMotion = false } = {}) {
+  if (typeof particlesJS !== 'undefined' && document.getElementById(elementId)) {
+    particlesJS(elementId, {
       "particles": {
         "number": {
           "value": 80,
@@ -32,7 +32,7 @@ function initParticles() {
           "width": 1
         },
         "move": {
-          "enable": true,
+          "enable": !reducedMotion,
           "speed": 3,
           "direction": "none",
           "random": false,
@@ -45,11 +45,11 @@ function initParticles() {
         "detect_on": "window",
         "events": {
           "onhover": {
-            "enable": true,
+            "enable": interactive && !reducedMotion,
             "mode": "grab"
           },
           "onclick": {
-            "enable": true,
+            "enable": interactive && !reducedMotion,
             "mode": "push"
           },
           "resize": true
