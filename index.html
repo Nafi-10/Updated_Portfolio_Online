@@ -24,6 +24,7 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/articles.css">
   <link rel="stylesheet" href="css/gallery.css">
 </head>
@@ -94,117 +95,59 @@
   </header>
 
   <!-- [3] ABOUT ME SECTION -->
-  <section id="about">
-    <div class="section-header" data-aos="fade-up">
-      <h2 class="section-title">About Me</h2>
-      <p class="section-subtitle">A glimpse into my background, aspiration, and drive</p>
+  <section id="about" class="about-redesign" aria-labelledby="about-heading">
+    <div class="about-section-label">
+      <h2 id="about-heading">About Me</h2>
+      <span aria-hidden="true"></span>
     </div>
-    <div class="about-showcase-container">
-      <!-- Left Column: Intro & Headline & Buttons -->
-      <div class="about-left-col" data-aos="fade-right">
-        <div class="about-status-badge">
-          <span class="status-pulse-dot"></span>
-          <span>Data Analyst | AI Enthusiast | ML Engineer</span>
-        </div>
-        <h3 class="about-hero-headline">
-          I build digital <span class="cyan-gradient-text">experiences</span> that matter.
-        </h3>
-        <p class="about-bio" id="about-bio-text" style="text-align: justify;">
-          I am <strong style="color: #ffffff; font-weight: 600;">MD Kazi Jawadul Islam</strong>, a B.Sc. student in Computing and Information Systems (CIS), majoring in <strong style="color: #22d3ee; font-weight: 500;">Artificial Intelligence in IoT</strong> at Daffodil International University. My journey blends three passions — <strong style="color: #38bdf8; font-weight: 500;">analyzing data</strong> to uncover hidden stories, <strong style="color: #38bdf8; font-weight: 500;">developing applications</strong> that solve real human problems, and <strong style="color: #38bdf8; font-weight: 500;">training machine learning models</strong> that make technology smarter. Having already worked professionally as a Data Analyst, I bring both academic knowledge and real-world experience to every project. I am dedicated, diligent, and always ready to embrace new challenges on my path to a thriving IT career.
-        </p>
-        <div class="about-action-buttons">
-          <a href="#projects" class="btn-cyan-glow">
-            <span>View My Work</span>
-            <i class="fa-solid fa-arrow-right btn-arrow-icon"></i>
-          </a>
-          <a href="#contact" class="btn-glass-talk">
-            <span>Let's Talk</span>
-            <i class="fa-regular fa-comment-dots"></i>
-          </a>
-        </div>
-        <div class="about-socials-row">
-          <a href="https://github.com/Nafi-10" target="_blank" rel="noopener" class="social-square-btn dynamic-github" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/jawadul-islam-ab6bb4418" target="_blank" rel="noopener" class="social-square-btn dynamic-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="https://www.facebook.com/jawadul.islam.14490/" target="_blank" rel="noopener" class="social-square-btn dynamic-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/_jawadul_islam/?hl=en" target="_blank" rel="noopener" class="social-square-btn dynamic-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="mailto:kazijawadulislam@gmail.com" class="social-square-btn dynamic-email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-        </div>
-      </div>
 
-      <!-- Center Column: Cyber Portrait & Feature Card -->
-      <div class="about-center-col" data-aos="zoom-in">
-        <div class="portrait-glow-halo"></div>
-        <div class="portrait-cyber-grid"></div>
-        <div class="portrait-outer-ring"></div>
-        <div class="portrait-image-wrapper">
-          <div class="portrait-scanner-line"></div>
-          <img src="assets/img/profile.jpg" alt="MD Kazi Jawadul Islam" class="portrait-main-img" id="profile-photo-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'">
-        </div>
-        <div class="floating-feature-card">
-          <div class="feature-code-icon">&lt;/&gt;</div>
-          <div class="feature-text-group">
-            <div class="feature-line feature-pulse">
-              <span class="tiny-green-dot"></span>
-              <span><strong>Clean Code</strong> <em>(eventually)</em></span>
-            </div>
-            <div class="feature-line"><strong>Scalable Solutions</strong> <em>(until users show up)</em></div>
-            <div class="feature-line"><strong>Pixel Perfect</strong> <em>(GPT-verified)</em></div>
-          </div>
-        </div>
-      </div>
+    <div class="about-editorial">
+      <figure class="about-portrait">
+        <img src="assets/img/profile.jpg" alt="MD Kazi Jawadul Islam in a navy suit" id="profile-photo-img" width="600" height="800" decoding="async">
+        <figcaption class="about-portrait-caption">
+          <strong class="dynamic-name">MD Kazi Jawadul Islam</strong>
+          <span>Curious mind. Purposeful work.</span>
+        </figcaption>
+      </figure>
 
-      <!-- Right Column: Glass Stats Cards & Certifications -->
-      <div class="about-right-col" data-aos="fade-left">
-        <div class="about-stats-stack" id="info-cards-container">
-          <div class="info-glass-card">
-            <div class="info-card-content">
-              <div class="info-card-value">DIU, CIS — AI Major</div>
-              <div class="info-card-label">Education</div>
-            </div>
-            <div class="info-card-badge">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-          </div>
-          <div class="info-glass-card">
-            <div class="info-card-content">
-              <div class="info-card-value">Asulia, Savar, Dhaka</div>
-              <div class="info-card-label">Location</div>
-            </div>
-            <div class="info-card-badge">
-              <i class="fa-solid fa-location-dot"></i>
-            </div>
-          </div>
-          <div class="info-glass-card">
-            <div class="info-card-content">
-              <div class="info-card-value">Business Analyst, Akand Engineering</div>
-              <div class="info-card-label">Current Role</div>
-            </div>
-            <div class="info-card-badge">
-              <i class="fa-solid fa-briefcase"></i>
-            </div>
-          </div>
-          <div class="info-glass-card">
-            <div class="info-card-content">
-              <div class="info-card-value">Music, Research, IoT</div>
-              <div class="info-card-label">Hobbies</div>
-            </div>
-            <div class="info-card-badge">
-              <i class="fa-solid fa-music"></i>
-            </div>
-          </div>
+      <div class="about-intro">
+        <p class="about-role"><span aria-hidden="true"></span>Data Analyst / AI Enthusiast / ML Engineer</p>
+        <h3 class="about-headline">I build digital <span>experiences</span> that matter.</h3>
+        <div class="about-introduction" id="about-bio-text">
+          <p>I'm MD Kazi Jawadul Islam, a B.Sc student in Computing and Information Systems at Daffodil International University, majoring in Artificial Intelligence.</p>
+          <p>Driven by research and innovation, I'm building my path in technology through practical projects, continuous learning, and thoughtful problem-solving.</p>
         </div>
-
-        <div class="about-certifications-box">
-          <div class="cert-box-header">
-            <i class="fa-solid fa-certificate"></i>
-            <span>Certifications & Expos</span>
-          </div>
-          <div class="cert-pills" id="certifications-pills-container">
-            <!-- Populated by JS -->
-          </div>
+        <div class="about-actions">
+          <a href="#articles" class="about-work-link">View My Work <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          <a href="#contact" class="about-contact-link">Let's Talk <i class="fa-regular fa-comment-dots" aria-hidden="true"></i></a>
+        </div>
+        <div class="about-social-links" aria-label="Social profiles">
+          <a href="https://github.com/Nafi-10" target="_blank" rel="noopener" class="social-square-btn dynamic-github" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/jawadul-islam-ab6bb4418" target="_blank" rel="noopener" class="social-square-btn dynamic-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/jawadul.islam.14490/" target="_blank" rel="noopener" class="social-square-btn dynamic-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/_jawadul_islam/?hl=en" target="_blank" rel="noopener" class="social-square-btn dynamic-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="mailto:kazijawadulislam@gmail.com" class="social-square-btn dynamic-email" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
+
+    <div class="about-details">
+      <div class="about-facts" id="info-cards-container" aria-label="At a glance">
+        <div class="about-fact"><span class="about-fact-icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span><div><span class="about-fact-label">Education</span><p class="about-fact-value">DIU, CIS — AI Major</p></div></div>
+        <div class="about-fact"><span class="about-fact-icon" aria-hidden="true"><i class="fa-solid fa-briefcase"></i></span><div><span class="about-fact-label">Current Role</span><p class="about-fact-value">Business Analyst<span>Akand Engineering</span></p></div></div>
+        <div class="about-fact"><span class="about-fact-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></span><div><span class="about-fact-label">Based In</span><p class="about-fact-value">Asulia, Savar, Dhaka</p></div></div>
+        <div class="about-fact"><span class="about-fact-icon" aria-hidden="true"><i class="fa-solid fa-music"></i></span><div><span class="about-fact-label">Interests</span><p class="about-fact-value">Music, Research, IoT</p></div></div>
+      </div>
+      <aside class="about-credentials" aria-labelledby="about-credentials-title">
+        <h3 id="about-credentials-title">Certifications &amp; Expos</h3>
+        <ul class="about-credential-list" id="certifications-pills-container">
+          <li><i class="fa-solid fa-award" aria-hidden="true"></i><span>AWS Cloud Foundations</span></li>
+          <li><i class="fa-solid fa-award" aria-hidden="true"></i><span>Destination Expo 2023</span></li>
+          <li><i class="fa-solid fa-award" aria-hidden="true"></i><span>Destination Expo 2024</span></li>
+        </ul>
+      </aside>
+    </div>
+    <div class="about-signoff" aria-hidden="true"><span>Stay curious · Keep learning · Build what matters</span><span class="about-signoff-line"></span><span>Better systems. Brighter possibilities.</span></div>
   </section>
 
   <!-- [4] SKILLS & INTERESTS BENTO DASHBOARD SECTION -->

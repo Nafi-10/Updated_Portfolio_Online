@@ -56,7 +56,13 @@ function renderAllData(data) {
     if (taglineEl) taglineEl.textContent = p.tagline || '';
 
     const aboutTextEl = document.getElementById('about-bio-text');
-    if (aboutTextEl) aboutTextEl.textContent = p.about || '';
+    if (aboutTextEl && p.about) {
+      aboutTextEl.replaceChildren(...p.about.split(/\n\s*\n/).map(text => {
+        const paragraph = document.createElement('p');
+        paragraph.textContent = text;
+        return paragraph;
+      }));
+    }
 
     const emailLinks = document.querySelectorAll('.dynamic-email');
     emailLinks.forEach(el => {
@@ -127,17 +133,37 @@ function renderAllData(data) {
   if (data.infoCards && Array.isArray(data.infoCards)) {
     const container = document.getElementById('info-cards-container');
     if (container) {
-      container.innerHTML = data.infoCards.map((card, idx) => `
-        <div class="info-glass-card" style="--card-idx: ${idx}">
-          <div class="info-card-content">
-            <div class="info-card-value">${card.value}</div>
-            <div class="info-card-label">${card.label}</div>
-          </div>
-          <div class="info-card-badge">
-            ${card.icon && card.icon.includes('<i') ? card.icon : (card.icon || '<i class="fa-solid fa-sparkles"></i>')}
-          </div>
-        </div>
-      `).join('');
+      const order = ['Education', 'Current Role', 'Location', 'Hobbies'];
+      const cards = [...data.infoCards].sort((a, b) => {
+        const rank = label => order.includes(label) ? order.indexOf(label) : order.length;
+        return rank(a.label) - rank(b.label);
+      });
+      container.replaceChildren(...cards.map(card => {
+        const fact = document.createElement('div');
+        fact.className = 'about-fact';
+        const icon = document.createElement('span');
+        icon.className = 'about-fact-icon';
+        icon.setAttribute('aria-hidden', 'true');
+        icon.innerHTML = card.icon || '<i class="fa-solid fa-circle-info"></i>';
+        const content = document.createElement('div');
+        const label = document.createElement('span');
+        label.className = 'about-fact-label';
+        label.textContent = ({ Location: 'Based In', Hobbies: 'Interests' })[card.label] || card.label;
+        const value = document.createElement('p');
+        value.className = 'about-fact-value';
+        const [role, ...organization] = String(card.value || '').split(', ');
+        if (card.label === 'Current Role' && organization.length) {
+          value.textContent = role;
+          const employer = document.createElement('span');
+          employer.textContent = organization.join(', ');
+          value.append(employer);
+        } else {
+          value.textContent = card.value || '';
+        }
+        content.append(label, value);
+        fact.append(icon, content);
+        return fact;
+      }));
     }
   }
 
@@ -145,9 +171,16 @@ function renderAllData(data) {
   if (data.certifications && Array.isArray(data.certifications)) {
     const container = document.getElementById('certifications-pills-container');
     if (container) {
-      container.innerHTML = data.certifications.map(cert => `
-        <span class="cert-pill"><i class="fa-solid fa-award"></i> ${cert}</span>
-      `).join('');
+      container.replaceChildren(...data.certifications.map(cert => {
+        const item = document.createElement('li');
+        const icon = document.createElement('i');
+        icon.className = 'fa-solid fa-award';
+        icon.setAttribute('aria-hidden', 'true');
+        const label = document.createElement('span');
+        label.textContent = cert;
+        item.append(icon, label);
+        return item;
+      }));
     }
   }
 
@@ -660,7 +693,7 @@ function getDefaultPortfolioData() {
     personal: {
       name: "MD Kazi Jawadul Islam",
       tagline: "Passionate about Technology, Research & Innovation",
-      about: "I am MD Kazi Jawadul Islam, a passionate B.Sc student in Computing and Information Systems (CIS) with a Major in Artificial Intelligence at Daffodil International University.",
+      about: "I'm MD Kazi Jawadul Islam, a B.Sc student in Computing and Information Systems at Daffodil International University, majoring in Artificial Intelligence.\n\nDriven by research and innovation, I'm building my path in technology through practical projects, continuous learning, and thoughtful problem-solving.",
       email: "kazijawadulislam@gmail.com",
       phone: "01410142580",
       address: "Asulia, Savar, Dhaka",
