@@ -24,6 +24,7 @@
   --font-body: 'Roboto', sans-serif;
   --transition-fast: 0.25s ease;
   --transition-normal: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --section-space: 56px;
 }
 
 *, *::before, *::after {
@@ -143,7 +144,7 @@ img {
 
 /* Section Common Layout */
 section {
-  padding: 110px 20px;
+  padding: var(--section-space) 20px;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
@@ -152,7 +153,7 @@ section {
 
 .section-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .section-title {
@@ -492,9 +493,8 @@ section {
    5. Hero / Banner Section
    -------------------------------------------------------------------------- */
 #hero {
-  min-height: 100vh;
   max-width: 100%;
-  padding: 120px 20px 60px;
+  padding: 140px 20px 92px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -625,7 +625,7 @@ section {
 #about {
   position: relative;
   overflow: hidden;
-  padding: 80px 0;
+  padding: var(--section-space) 0;
 }
 
 #about::before {
@@ -2006,6 +2006,10 @@ section {
   width: 50%;
 }
 
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
 .timeline-item:nth-child(odd) {
   left: 0;
   padding-right: 40px;
@@ -2138,7 +2142,7 @@ section {
   z-index: 2;
   max-width: 1360px;
   margin: 0 auto;
-  padding: 100px 24px;
+  padding: var(--section-space) 24px;
 }
 
 .storehouse-badge {
@@ -3419,6 +3423,10 @@ footer {
    14. Mobile & Tablet Layout Refinements
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
+  :root {
+    --section-space: 48px;
+  }
+
   html {
     overflow-x: hidden;
   }
@@ -3430,7 +3438,7 @@ footer {
 
   section {
     width: 100%;
-    padding: 82px 24px;
+    padding: var(--section-space) 24px;
   }
 
   .navbar {
@@ -3473,8 +3481,7 @@ footer {
   }
 
   #hero {
-    min-height: max(680px, 100svh);
-    padding: 128px 24px 76px;
+    padding: 124px 24px 88px;
   }
 
   .hero-content {
@@ -3572,17 +3579,21 @@ footer {
 }
 
 @media (max-width: 600px) {
+  :root {
+    --section-space: 40px;
+  }
+
   #about {
     padding-left: 16px;
     padding-right: 16px;
   }
 
   section {
-    padding: 68px 16px;
+    padding: var(--section-space) 16px;
   }
 
   .section-header {
-    margin-bottom: 38px;
+    margin-bottom: 32px;
   }
 
   .section-title {
@@ -3606,8 +3617,7 @@ footer {
   }
 
   #hero {
-    min-height: 100svh;
-    padding: 108px 16px 64px;
+    padding: 108px 16px 84px;
   }
 
   .hero-content {
