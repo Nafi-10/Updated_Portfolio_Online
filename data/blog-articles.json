@@ -1,0 +1,65 @@
+[
+  {
+    "id": "future-of-ai",
+    "source": "01_future_of_ai.md",
+    "title": "The Future of AI: From Chatbots to a Digital Workforce",
+    "shortTitle": "The Future of AI",
+    "category": "Artificial Intelligence",
+    "tagline": "How AI agents could reshape work, discovery, and opportunity.",
+    "keywords": [
+      "AI agents",
+      "Future of work",
+      "Innovation"
+    ],
+    "excerpt": "Explore the forces shaping AI, the limits behind the hype, and practical ways people and businesses can prepare.",
+    "hero": "future-of-ai.svg",
+    "heroAlt": "Illustration of a human-directed workflow connecting an AI assistant, tools, and specialist agents.",
+    "takeaways": [
+      "AI is expanding from generating answers to carrying out supervised workflows.",
+      "Infrastructure, reliability, and human decisions will shape how widely it is adopted.",
+      "Build domain expertise and AI fluency together, while keeping accountability clear."
+    ]
+  },
+  {
+    "id": "robots-and-human-work",
+    "source": "02_will_robots_replace_humans.md",
+    "title": "Will Humans Truly Be Replaced by Robots?",
+    "shortTitle": "Robots & Human Work",
+    "category": "Robotics & Society",
+    "tagline": "Understanding task automation, changing jobs, and the human role.",
+    "keywords": [
+      "Robotics",
+      "Automation",
+      "Human skills"
+    ],
+    "excerpt": "Separate demonstrations from deployment, examine the economics of automation, and understand why tasks and whole jobs change differently.",
+    "hero": "robots-and-human-work.svg",
+    "heroAlt": "Illustration of a human and a robot sharing a workspace, with tasks divided between them.",
+    "takeaways": [
+      "Automating a task is different from eliminating an entire job or occupation.",
+      "Cost, reliability, and physical environments constrain robot adoption.",
+      "Employment forecasts describe possible transitions, not individual career guarantees."
+    ]
+  },
+  {
+    "id": "better-ai-prompts",
+    "source": "03_how_to_write_prompts_for_exact_output.md",
+    "title": "How to Write Prompts That Get the Output You Want",
+    "shortTitle": "A Practical Prompting Guide",
+    "category": "Practical AI",
+    "tagline": "Clear instructions, useful examples, and a repeatable way to improve results.",
+    "keywords": [
+      "Prompt design",
+      "Examples",
+      "Iteration"
+    ],
+    "excerpt": "A practical guide with a six-part framework, before-and-after examples, a reusable template, and an output-checking checklist.",
+    "hero": "better-ai-prompts.svg",
+    "heroAlt": "Illustration of role, task, context, and format flowing into a clear prompt and a reviewed response.",
+    "takeaways": [
+      "Specify the task, audience, inputs, format, and constraints before asking for an answer.",
+      "Use examples and structured sections when a request is complex.",
+      "Evaluate and refine the result; even a careful prompt cannot guarantee perfect accuracy."
+    ]
+  }
+]

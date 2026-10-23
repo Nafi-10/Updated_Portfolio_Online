@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { mergeProjectDocuments } from '../js/library-model.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const projects = JSON.parse(readFileSync(path.join(root, 'data/project-articles.json'), 'utf8'));
@@ -11,7 +12,7 @@ const author = 'MD Kazi Jawadul Islam';
 for (const [index, project] of projects.entries()) {
   const prev = projects[(index - 1 + projects.length) % projects.length];
   const next = projects[(index + 1) % projects.length];
-  const words = [...project.intro, ...project.sections.flatMap(section => [section.title, ...section.paragraphs])].join(' ').split(/\s+/).length;
+  const words = [...project.intro, ...(project.highlights || []).flatMap(item => [item.title, item.text]), ...project.sections.flatMap(section => [section.title, ...section.paragraphs])].join(' ').split(/\s+/).length;
   const minutes = Math.max(1, Math.ceil(words / 200));
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -52,11 +53,8 @@ for (const [index, project] of projects.entries()) {
       </figure>
       <div class="reader-copy">
         ${paragraphs(project.intro)}
-        ${project.sections.map((section, sectionIndex) => `<section><h2>${sectionIndex + 1}. ${escape(section.title)}</h2>${paragraphs(section.paragraphs)}</section>`).join('\n')}
-        <aside class="reader-source" aria-label="Original documentation">
-          <p>Explore the complete diagrams and technical notes in the original project documentation.</p>
-          <a href="../documents/${escape(project.pdf)}">Read the original PDF <span>↗ ${project.pages} pages</span></a>
-        </aside>
+        ${project.highlights?.length ? `<aside class="reader-highlights" aria-label="Unique features"><p class="reader-highlights-label">What makes it different</p><div>${project.highlights.map(item => `<section><h2>${escape(item.title)}</h2><p>${escape(item.text)}</p></section>`).join('')}</div></aside>` : ''}
+        ${project.sections.map((section, sectionIndex) => `<section><h2>${sectionIndex + 1}. ${escape(section.title)}</h2>${paragraphs(section.paragraphs)}${section.image ? `<figure class="reader-detail"><a href="../../assets/img/projects/${escape(section.image.src)}" target="_blank" rel="noopener" aria-label="Open full image: ${escape(section.image.alt)}"><img src="../../assets/img/projects/${escape(section.image.src)}" alt="${escape(section.image.alt)}" loading="lazy"></a><figcaption>${escape(section.image.caption)} <span>Open image for a closer look.</span></figcaption></figure>` : ''}</section>`).join('\n')}
         <nav class="reader-pagination" aria-label="More project articles">
           <a href="../${prev.id}/"><span>← Previous project</span><strong>${escape(prev.shortTitle)}</strong></a>
           <a href="../${next.id}/"><span>Next project →</span><strong>${escape(next.shortTitle)}</strong></a>
@@ -74,11 +72,10 @@ for (const [index, project] of projects.entries()) {
 }
 
 // Keep both existing portfolio data stores aligned with the document library.
-const articleCards = projects.map(({ id, title, tagline, keywords, excerpt, category }) => ({ id, title, tagline, keywords, excerpt, category, href: `articles/${id}/` }));
 for (const relative of ['data/portfolio-data.json', 'content/data.json']) {
   const destination = path.join(root, relative);
   const data = JSON.parse(readFileSync(destination, 'utf8'));
-  data.articles = articleCards;
+  data.articles = mergeProjectDocuments(projects, data.articles || []);
   writeFileSync(destination, JSON.stringify(data, null, 2) + '\n');
 }
 console.log(`Prepared ${projects.length} project cards and article pages.`);

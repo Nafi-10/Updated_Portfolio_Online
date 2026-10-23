@@ -15,7 +15,7 @@
   },
   "about": {
     "photo": "assets/img/Kazi_Jawad.jpg",
-    "bio": "I am MD Kazi Jawadul Islam, a passionate B.Sc student in Computing and Information Systems (CIS) with a Major in Artificial Intelligence at Daffodil International University. I have a strong aspiration to establish a thriving career in the IT industry. I am dedicated and diligent, always ready to embrace new opportunities and overcome obstacles. I am enthusiastic about learning and possess the ability to quickly grasp new concepts.",
+    "bio": "A motivated and detail-oriented Business Analyst with experience in business process analysis, project coordination, digital transformation, and technology-driven business solutions. I have hands-on experience working with CRM, HRM, project management, workflow automation, data collection, reporting, and website development projects, with a strong focus on identifying business requirements and converting them into practical solutions.\n\nI am passionate about using technology to improve organizational efficiency, streamline business processes, and support data-driven decision-making. I also have experience contributing to digital marketing, social media management, content planning, and corporate branding initiatives. Alongside my professional experience, I have worked on an AI-based legal research project involving semantic search, document summarization, and data-driven analysis.\n\nI am a fast learner, problem solver, and team-oriented professional who continuously seeks opportunities to develop my technical, analytical, and business skills while contributing meaningful value to an organization.",
     "infoCards": [
       {
         "icon": "fas fa-graduation-cap",
@@ -206,6 +206,7 @@
   "articles": [
     {
       "id": "nexora",
+      "collection": "projects",
       "title": "NEXORA — Multi-Business Operating Platform",
       "tagline": "One workspace for multiple businesses, connected operations, and accountable decisions.",
       "keywords": [
@@ -215,10 +216,19 @@
       ],
       "excerpt": "Explore a frontend ERP prototype that brings finance, operations, and business governance into one interface.",
       "category": "Software & Business Systems",
-      "href": "articles/nexora/"
+      "href": "articles/nexora/",
+      "thumbnail": "assets/img/projects/nexora.png",
+      "pdf": "articles/documents/NEXORA_Project_Documentation.pdf",
+      "images": [
+        {
+          "src": "assets/img/projects/nexora.png",
+          "alt": "NEXORA project cover showing its multi-business platform identity and frontend prototype scope"
+        }
+      ]
     },
     {
       "id": "security-system",
+      "collection": "projects",
       "title": "Missile Tracking & Security System",
       "tagline": "A hands-on Arduino simulation connecting object detection, access control, and visual feedback.",
       "keywords": [
@@ -228,10 +238,19 @@
       ],
       "excerpt": "A physical learning model combining ultrasonic sensing and a separate keypad-controlled security subsystem.",
       "category": "Embedded Systems",
-      "href": "articles/security-system/"
+      "href": "articles/security-system/",
+      "thumbnail": "assets/img/projects/security-system.jpg",
+      "pdf": "articles/documents/Missile_Tracking_Security_System_Documentation.pdf",
+      "images": [
+        {
+          "src": "assets/img/projects/security-system.jpg",
+          "alt": "The educational Arduino prototype displayed beside a laptop, with a model building, gate, sensor assembly, and toy aircraft"
+        }
+      ]
     },
     {
       "id": "flipbook-catalogue",
+      "collection": "projects",
       "title": "Interactive 3D Flipbook Product Catalogue",
       "tagline": "Turn a static catalogue into an interactive, page-turning web experience.",
       "keywords": [
@@ -241,7 +260,165 @@
       ],
       "excerpt": "A customizable digital catalogue with page turns, search, thumbnails, zoom, and fullscreen reading.",
       "category": "Web & Interaction Design",
-      "href": "articles/flipbook-catalogue/"
+      "href": "articles/flipbook-catalogue/",
+      "thumbnail": "assets/img/projects/flipbook-catalogue.jpg",
+      "pdf": "articles/documents/Flipbook_Catalogue_Project_Documentation.pdf",
+      "images": [
+        {
+          "src": "assets/img/projects/flipbook-catalogue.jpg",
+          "alt": "Concept illustration of a large spiral-bound digital furniture catalogue displayed in a design studio"
+        }
+      ]
+    },
+    {
+      "id": "maison-velour",
+      "collection": "projects",
+      "title": "Maison Velour — Immersive Fragrance Boutique",
+      "tagline": "An immersive fragrance boutique, from discovery to gifting.",
+      "keywords": [
+        "3D boutique",
+        "Gift builder",
+        "JavaScript"
+      ],
+      "excerpt": "A luxury fragrance storefront with a walkable 3D boutique, interactive bottle inspection, and personalized gift previews.",
+      "category": "Web Experiences",
+      "href": "articles/maison-velour/",
+      "thumbnail": "assets/img/projects/maison-velour.jpg",
+      "images": [
+        {
+          "src": "assets/img/projects/maison-velour.jpg",
+          "alt": "Maison Velour storefront shown on desktop and mobile"
+        },
+        {
+          "src": "assets/img/projects/maison-boutique.jpg",
+          "alt": "Maison Velour virtual boutique with navigation and fragrance displays"
+        },
+        {
+          "src": "assets/img/projects/maison-gifting.jpg",
+          "alt": "Maison Velour gifting atelier interface"
+        }
+      ]
+    },
+    {
+      "id": "hridita-portfolio",
+      "collection": "projects",
+      "title": "Hridita Huq — Fashion Portfolio",
+      "tagline": "An editorial fashion portfolio built around movement, detail, and discovery.",
+      "keywords": [
+        "Editorial design",
+        "Animated lookbook",
+        "JavaScript"
+      ],
+      "excerpt": "A fashion portfolio with an animated five-look runway, individual collection pages, an interactive atelier, and a cinematic journal.",
+      "category": "Web Experiences",
+      "href": "articles/hridita-portfolio/",
+      "thumbnail": "assets/img/projects/hridita-portfolio.jpg",
+      "images": [
+        {
+          "src": "assets/img/projects/hridita-portfolio.jpg",
+          "alt": "Hridita Huq fashion portfolio introduction with arched portrait"
+        },
+        {
+          "src": "assets/img/projects/hridita-collection.jpg",
+          "alt": "Hridita portfolio five-look fashion collection"
+        },
+        {
+          "src": "assets/img/projects/hridita-atelier.jpg",
+          "alt": "Hridita portfolio atelier and sketch-study interface"
+        }
+      ]
+    },
+    {
+      "id": "3d-building-blueprint",
+      "collection": "projects",
+      "title": "3D Building Blueprint — Kazi Jawad",
+      "tagline": "Configure a steel-building concept and explore it from every angle.",
+      "keywords": [
+        "Three.js",
+        "Parametric 3D",
+        "Design brief"
+      ],
+      "excerpt": "A live steel-building configurator with four framing systems, adjustable dimensions, exploded views, and downloadable concept briefs.",
+      "category": "3D & Interactive Tools",
+      "href": "articles/3d-building-blueprint/",
+      "thumbnail": "assets/img/projects/building-blueprint.jpg",
+      "images": [
+        {
+          "src": "assets/img/projects/building-blueprint.jpg",
+          "alt": "Kazi Jawad branded 3D steel-building model with dimension labels"
+        },
+        {
+          "src": "assets/img/projects/building-blueprint-overview.jpg",
+          "alt": "Kazi Jawad building studio with configuration controls and live 3D model"
+        },
+        {
+          "src": "assets/img/projects/building-blueprint-exploded.jpg",
+          "alt": "Kazi Jawad building model with separated roof and cladding"
+        }
+      ]
+    },
+    {
+      "id": "future-of-ai",
+      "collection": "articles",
+      "title": "The Future of AI: From Chatbots to a Digital Workforce",
+      "tagline": "How AI agents could reshape work, discovery, and opportunity.",
+      "keywords": [
+        "AI agents",
+        "Future of work",
+        "Innovation"
+      ],
+      "excerpt": "Explore the forces shaping AI, the limits behind the hype, and practical ways people and businesses can prepare.",
+      "category": "Artificial Intelligence",
+      "href": "articles/future-of-ai/",
+      "thumbnail": "assets/img/blog/future-of-ai.svg",
+      "images": [
+        {
+          "src": "assets/img/blog/future-of-ai.svg",
+          "alt": "Illustration of a human-directed workflow connecting an AI assistant, tools, and specialist agents."
+        }
+      ]
+    },
+    {
+      "id": "robots-and-human-work",
+      "collection": "articles",
+      "title": "Will Humans Truly Be Replaced by Robots?",
+      "tagline": "Understanding task automation, changing jobs, and the human role.",
+      "keywords": [
+        "Robotics",
+        "Automation",
+        "Human skills"
+      ],
+      "excerpt": "Separate demonstrations from deployment, examine the economics of automation, and understand why tasks and whole jobs change differently.",
+      "category": "Robotics & Society",
+      "href": "articles/robots-and-human-work/",
+      "thumbnail": "assets/img/blog/robots-and-human-work.svg",
+      "images": [
+        {
+          "src": "assets/img/blog/robots-and-human-work.svg",
+          "alt": "Illustration of a human and a robot sharing a workspace, with tasks divided between them."
+        }
+      ]
+    },
+    {
+      "id": "better-ai-prompts",
+      "collection": "articles",
+      "title": "How to Write Prompts That Get the Output You Want",
+      "tagline": "Clear instructions, useful examples, and a repeatable way to improve results.",
+      "keywords": [
+        "Prompt design",
+        "Examples",
+        "Iteration"
+      ],
+      "excerpt": "A practical guide with a six-part framework, before-and-after examples, a reusable template, and an output-checking checklist.",
+      "category": "Practical AI",
+      "href": "articles/better-ai-prompts/",
+      "thumbnail": "assets/img/blog/better-ai-prompts.svg",
+      "images": [
+        {
+          "src": "assets/img/blog/better-ai-prompts.svg",
+          "alt": "Illustration of role, task, context, and format flowing into a clear prompt and a reviewed response."
+        }
+      ]
     }
   ],
   "contact": {
@@ -250,6 +427,6 @@
     "location": "Asulia, Savar, Dhaka"
   },
   "resume": {
-    "summary": "Diligent and dedicated Computing and Information System student specializing in AI, with professional experience as a Business Analyst at Akand Engineering. Experienced in event management, leadership, graphics design, and cybersecurity campus advocacy."
+    "summary": "A motivated and detail-oriented Business Analyst with experience in business process analysis, project coordination, digital transformation, and technology-driven business solutions. I have hands-on experience working with CRM, HRM, project management, workflow automation, data collection, reporting, and website development projects, with a strong focus on identifying business requirements and converting them into practical solutions.\n\nI am passionate about using technology to improve organizational efficiency, streamline business processes, and support data-driven decision-making. I also have experience contributing to digital marketing, social media management, content planning, and corporate branding initiatives. Alongside my professional experience, I have worked on an AI-based legal research project involving semantic search, document summarization, and data-driven analysis.\n\nI am a fast learner, problem solver, and team-oriented professional who continuously seeks opportunities to develop my technical, analytical, and business skills while contributing meaningful value to an organization."
   }
 }

@@ -436,8 +436,8 @@ function renderAllData(data) {
     }
   }
 
-  // Articles & Projects: numbered collection columns.
-  renderArticleColumns(Array.isArray(data.articles) ? data.articles : []);
+  // Articles & Projects: two animated folders and their document libraries.
+  renderDocumentLibrary(Array.isArray(data.articles) ? data.articles : []);
 
   // Typed Strings Init
   if (typeof initTyped === 'function') {
@@ -693,7 +693,7 @@ function getDefaultPortfolioData() {
     personal: {
       name: "MD Kazi Jawadul Islam",
       tagline: "Passionate about Technology, Research & Innovation",
-      about: "I'm MD Kazi Jawadul Islam, a B.Sc student in Computing and Information Systems at Daffodil International University, majoring in Artificial Intelligence.\n\nDriven by research and innovation, I'm building my path in technology through practical projects, continuous learning, and thoughtful problem-solving.",
+      about: "A motivated and detail-oriented Business Analyst with experience in business process analysis, project coordination, digital transformation, and technology-driven business solutions. I have hands-on experience working with CRM, HRM, project management, workflow automation, data collection, reporting, and website development projects, with a strong focus on identifying business requirements and converting them into practical solutions.\n\nI am passionate about using technology to improve organizational efficiency, streamline business processes, and support data-driven decision-making. I also have experience contributing to digital marketing, social media management, content planning, and corporate branding initiatives. Alongside my professional experience, I have worked on an AI-based legal research project involving semantic search, document summarization, and data-driven analysis.\n\nI am a fast learner, problem solver, and team-oriented professional who continuously seeks opportunities to develop my technical, analytical, and business skills while contributing meaningful value to an organization.",
       email: "kazijawadulislam@gmail.com",
       phone: "01410142580",
       address: "Asulia, Savar, Dhaka",

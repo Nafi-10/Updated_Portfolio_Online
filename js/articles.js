@@ -1,12 +1,14 @@
 /* Each folded card represents one document. Navigation loops through the library. */
-function renderArticleColumns(articles = []) {
+function renderArticleColumns(articles = [], parentSignal, collection = 'projects') {
   const container = document.getElementById('article-columns');
   const carousel = document.getElementById('article-carousel');
   if (!container || !carousel) return;
   if (carousel.cleanup) carousel.cleanup();
   const controller = new AbortController();
   const { signal } = controller;
+  const itemLabel = collection === 'articles' ? 'Article' : 'Project';
   carousel.cleanup = () => controller.abort();
+  parentSignal?.addEventListener('abort', carousel.cleanup, { once: true, signal });
   let active = 0;
   const previous = document.getElementById('article-previous');
   const next = document.getElementById('article-next');
@@ -21,31 +23,37 @@ function renderArticleColumns(articles = []) {
     return node;
   };
   const cards = articles.map((article, index) => {
-    const tone = ['crimson', 'teal', 'olive', 'plum'][index % 4];
+    const serialNumber = article.serial || index + 1;
+    const tone = ['crimson', 'teal', 'olive', 'plum'][(serialNumber - 1) % 4];
     const card = element('article', 'article-column article-column--' + tone);
     card.setAttribute('aria-labelledby', 'document-title-' + index);
-    card.dataset.serial = String(index + 1).padStart(2, '0');
+    card.dataset.serial = String(serialNumber).padStart(2, '0');
     const top = element('div', 'article-column-top');
-    const icon = element('i', 'fa-solid ' + ['fa-layer-group', 'fa-microchip', 'fa-book-open'][index % 3] + ' article-column-icon');
+    const icons = collection === 'articles' ? ['fa-brain', 'fa-robot', 'fa-terminal'] : ['fa-layer-group', 'fa-microchip', 'fa-book-open', 'fa-spray-can-sparkles', 'fa-pen-ruler', 'fa-cubes'];
+    const icon = element('i', 'fa-solid ' + icons[(serialNumber - 1) % icons.length] + ' article-column-icon');
     icon.setAttribute('aria-hidden', 'true');
-    const heading = element('h3', 'article-column-title', article.title);
+    const heading = element('h4', 'article-column-title', article.title);
     heading.id = 'document-title-' + index;
     top.append(icon, heading, element('p', 'article-column-description', article.tagline));
     const band = element('div', 'article-column-band');
     const serial = element('span', 'article-column-number', card.dataset.serial);
-    serial.setAttribute('aria-label', 'Document ' + (index + 1));
+    serial.setAttribute('aria-label', itemLabel + ' ' + serialNumber);
     const keywords = element('span', 'article-column-keywords');
     (article.keywords || []).forEach(keyword => keywords.append(element('span', '', keyword)));
     band.append(serial, keywords);
     const body = element('div', 'article-column-body');
     body.append(element('p', 'article-column-summary', article.excerpt));
-    const link = element('a', 'article-read-more', 'Read more');
-    link.href = article.href;
+    const link = element(article.href ? 'a' : 'button', 'article-read-more', 'Read more');
+    if (article.href) link.href = article.href;
+    else {
+      link.type = 'button';
+      link.dataset.readItem = article.libraryIndex;
+    }
     link.setAttribute('aria-label', 'Read more: ' + article.title);
     const arrow = element('span', '', '↗');
     arrow.setAttribute('aria-hidden', 'true');
     link.append(arrow);
-    body.append(link);
+    if (article.href || article.body || article.previewable) body.append(link);
     card.append(top, band, body);
     return card;
   });
@@ -56,7 +64,7 @@ function renderArticleColumns(articles = []) {
     container.replaceChildren(...ordered);
     position.textContent = cards.length ? String(active + 1).padStart(2, '0') + ' / ' + String(cards.length).padStart(2, '0') : '';
     previous.disabled = next.disabled = cards.length < 2;
-    if (announce && cards.length) announcement.textContent = 'Document ' + (active + 1) + ' of ' + cards.length + ': ' + articles[active].title;
+    if (announce && cards.length) announcement.textContent = itemLabel + ' ' + (active + 1) + ' of ' + cards.length + ': ' + articles[active].title;
   }
   function move(direction) {
     if (!cards.length) return;

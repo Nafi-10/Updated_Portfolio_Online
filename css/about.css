@@ -31,7 +31,7 @@
 .about-role > span { width: 8px; height: 8px; flex-shrink: 0; border-radius: 50%; background: #34d399; box-shadow: 0 0 12px #34d39966; }
 .about-headline { max-width: 620px; margin: 0 0 24px; font-size: clamp(2.3rem, 4.2vw, 3.4rem); font-weight: 800; line-height: 1.13; letter-spacing: -.035em; }
 .about-headline > span { display: block; color: #06c5e5; }
-.about-introduction { color: #c7d1df; font-size: 1rem; line-height: 1.7; }
+.about-introduction { color: #c7d1df; font-size: 1rem; line-height: 1.7; text-align: justify; text-justify: inter-word; text-align-last: left; hyphens: auto; }
 .about-introduction p + p { margin-top: 12px; }
 .about-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
 .about-actions a { display: inline-flex; align-items: center; justify-content: center; gap: 18px; min-height: 48px; padding: 12px 24px; border-radius: 10px; font-size: .9rem; font-weight: 600; }

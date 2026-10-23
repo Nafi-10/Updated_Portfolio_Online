@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>How to Write Prompts That Get the Output You Want | Kazi Jawad</title>
+  <meta name="description" content="A practical guide with a six-part framework, before-and-after examples, a reusable template, and an output-checking checklist.">
+  <meta name="theme-color" content="#f5f6f8">
+  <meta property="og:title" content="How to Write Prompts That Get the Output You Want"><meta property="og:description" content="A practical guide with a six-part framework, before-and-after examples, a reusable template, and an output-checking checklist."><meta property="og:type" content="article">
+  <link rel="stylesheet" href="../../css/article-reader.css"><link rel="stylesheet" href="../../css/blog-reader.css">
+</head><body class="blog-reader">
+  <a class="skip-link" href="#article">Skip to article</a>
+  <header class="reader-nav"><a class="reader-brand" href="../../"><span class="brand-mark" aria-hidden="true">KJ</span>Kazi Jawad</a><a class="reader-back" href="../../?folder=articles#articles">← All articles</a></header>
+  <main class="reader-surface"><article class="reader-article" id="article">
+    <header><p class="reader-kicker">Articles / 03 · Practical AI</p>
+      <h1>How to Write Prompts That Get the Output You Want</h1><p class="reader-deck">Clear instructions, useful examples, and a repeatable way to improve results.</p>
+      <div class="reader-meta"><div class="reader-author"><img src="../../assets/img/author.jpg" alt="" width="38" height="38"><div><span>Written by</span><strong>MD Kazi Jawadul Islam</strong></div></div><div class="reader-tags"><time class="reader-tag" datetime="2026-10-24">24 October 2026</time><span class="reader-tag">11 min read</span></div></div>
+    </header>
+    <figure class="reader-hero"><img src="../../assets/img/blog/better-ai-prompts.svg" alt="Illustration of role, task, context, and format flowing into a clear prompt and a reviewed response." width="1200" height="640" fetchpriority="high"></figure>
+    <div class="reader-copy blog-copy">
+      <aside class="blog-takeaways" aria-label="Key takeaways"><p class="blog-label">The key ideas</p><ul><li>Specify the task, audience, inputs, format, and constraints before asking for an answer.</li><li>Use examples and structured sections when a request is complex.</li><li>Evaluate and refine the result; even a careful prompt cannot guarantee perfect accuracy.</li></ul></aside>
+      <details class="blog-contents" open><summary>In this article</summary><nav aria-label="Article contents"><ol><li><a href="#introduction">Introduction</a></li><li><a href="#1-the-core-principle-remove-guesswork">The Core Principle: Remove Guesswork</a></li><li><a href="#2-the-six-part-prompt-formula">The Six-Part Prompt Formula</a></li><li><a href="#3-before-and-after-the-difference-specificity-makes">Before and After: The Difference Specificity Makes</a></li><li><a href="#4-core-techniques-and-when-to-use-each">Core Techniques (and When to Use Each)</a></li><li><a href="#5-a-reusable-master-template">A Reusable Master Template</a></li><li><a href="#6-the-iteration-loop-your-first-prompt-is-a-draft">The Iteration Loop: Your First Prompt Is a Draft</a></li><li><a href="#7-common-mistakes-to-avoid">Common Mistakes to Avoid</a></li><li><a href="#8-advanced-tips">Advanced Tips</a></li><li><a href="#9-three-ready-to-use-prompt-examples">Three Ready-to-Use Prompt Examples</a></li><li><a href="#10-quick-checklist-before-you-press-enter">Quick Checklist Before You Press Enter</a></li><li><a href="#conclusion">Conclusion</a></li><li><a href="#sources-and-notes">Sources and Notes</a></li></ol></nav></details>
+      <h2 id="introduction">Introduction</h2>
+<p>A vague request can produce an answer that misses the point. AI models do not automatically know your audience, source material, or standards, and may fill missing context with assumptions. Clearer prompts improve the odds of a useful result, but cannot guarantee accuracy or exact compliance. Model limitations and the quality of the supplied information matter too.</p>
+<p><strong>Prompt engineering is simply clear communication</strong>: telling the AI who it should be, what you want, what it needs to know, and how the result should look. It is a learnable and testable skill, not a trick. Anthropic&#39;s published prompting guidance emphasizes clear instructions, useful examples, and structured tags. For complex tasks, request a concise explanation and checks that help you assess the answer.</p>
+<p>This guide walks you through that approach, with templates and before/after examples you can reuse immediately.</p>
+<hr>
+<h2 id="1-the-core-principle-remove-guesswork">1. The Core Principle: Remove Guesswork</h2>
+<p>Imagine handing a task to a smart new colleague who knows nothing about your project, your audience or your standards. If you say &quot;write something about innovation,&quot; they will ask questions. An AI usually will not ask; it will just guess. A prompt works when it answers, in advance, the questions that colleague would have asked.</p>
+<p><strong>The five questions every good prompt answers:</strong></p>
+<ol><li><strong>Who</strong> is this for, and what role should the AI play?</li><li><strong>What</strong> exactly is the task?</li><li><strong>Why / context:</strong> what background does the AI need?</li><li><strong>How</strong> should the output look (format, length, tone)?</li><li><strong>What not</strong> to do (constraints)?</li></ol>
+<hr>
+<h2 id="2-the-six-part-prompt-formula">2. The Six-Part Prompt Formula</h2>
+<div class="blog-table" role="region" aria-label="Comparison table" tabindex="0"><table><thead><tr><th scope="col">#</th><th scope="col">Part</th><th scope="col">What to write</th><th scope="col">Example</th></tr></thead><tbody><tr><td>1</td><td><strong>Role</strong></td><td>Who the AI should act as</td><td>&quot;You are an experienced HR consultant.&quot;</td></tr><tr><td>2</td><td><strong>Task</strong></td><td>The exact job, in a clear verb</td><td>&quot;Write a job description for...&quot;</td></tr><tr><td>3</td><td><strong>Context</strong></td><td>Background, audience, purpose, source material</td><td>&quot;The company is a 40-person steel fabrication firm hiring its first safety officer.&quot;</td></tr><tr><td>4</td><td><strong>Format</strong></td><td>Structure, length, language, style</td><td>&quot;Use headings, 400-500 words, plain English.&quot;</td></tr><tr><td>5</td><td><strong>Examples</strong></td><td>One or more samples of what good looks like</td><td>&quot;Here is a past job description we liked: ...&quot;</td></tr><tr><td>6</td><td><strong>Constraints</strong></td><td>Rules, limits, things to avoid</td><td>&quot;No jargon. Don&#39;t mention salary. Do not invent qualifications.&quot;</td></tr></tbody></table></div>
+<p>You will not need all six every time. Simple tasks need two or three; complex or high-stakes tasks benefit from all six.</p>
+<hr>
+<h2 id="3-before-and-after-the-difference-specificity-makes">3. Before and After: The Difference Specificity Makes</h2>
+<h3 id="example-a-content-writing">Example A: Content writing</h3>
+<p><strong>Weak:</strong> &quot;Write about solar energy.&quot;</p>
+<p><strong>Strong:</strong></p>
+<blockquote><p>You are a science writer for a general audience. Write an 800-word article explaining how rooftop solar panels work and whether they are worth the cost for a homeowner in a hot, sunny climate. Use simple language (suitable for a high-school reader), include a short section on maintenance, and end with a 3-point summary. Avoid technical jargon and do not make up statistics; if you are unsure of a number, say so.</p></blockquote>
+<h3 id="example-b-business-analysis">Example B: Business analysis</h3>
+<p><strong>Weak:</strong> &quot;Analyze this sales data.&quot;</p>
+<p><strong>Strong:</strong></p>
+<blockquote><p>You are a data analyst. Below is monthly sales data for 2025 for three product lines. 1) Identify the three most important trends. 2) Point out any unusual months and possible reasons. 3) Recommend two actions for next quarter. Present the result as a short executive summary (max 150 words) followed by a table of key figures. If the data is insufficient to support a conclusion, say so rather than guessing.<br>&lt;data&gt; ...paste data here... &lt;/data&gt;</p></blockquote>
+<h3 id="example-c-email">Example C: Email</h3>
+<p><strong>Weak:</strong> &quot;Write an email to my client.&quot;</p>
+<p><strong>Strong:</strong></p>
+<blockquote><p>Write a polite but firm email to a client who is 30 days late on an invoice of $2,400. We have a good relationship and want to keep it. Tone: professional and warm. Length: under 120 words. Include: reminder of the invoice number (INV-1042), a new payment deadline of November 7, and an offer to help with any payment problems. No threats.</p></blockquote>
+<hr>
+<h2 id="4-core-techniques-and-when-to-use-each">4. Core Techniques (and When to Use Each)</h2>
+<h3 id="41-be-clear-and-direct">4.1 Be clear and direct</h3>
+<p>Say exactly what you want, in plain words. Use specific action verbs (&quot;summarize,&quot; &quot;compare,&quot; &quot;rewrite,&quot; &quot;list,&quot; &quot;classify&quot;) instead of &quot;talk about.&quot; If an instruction could be read two ways, spell out which meaning you intend.</p>
+<h3 id="42-give-examples-few-shot-prompting">4.2 Give examples (few-shot prompting)</h3>
+<p>Showing is stronger than describing. Provide one to three input-and-output samples so the AI can copy the pattern.</p>
+<blockquote><p>Classify each customer message as <strong>Complaint</strong>, <strong>Question</strong>, or <strong>Praise</strong>.<br>Message: &quot;My order arrived broken.&quot; → Complaint<br>Message: &quot;What time do you open on Friday?&quot; → Question<br>Message: &quot;Your team was fantastic!&quot; → Praise<br>Message: &quot;I still haven&#39;t received my refund.&quot; →</p></blockquote>
+<p>Tip: For creative work where you want variety, test with and without examples; examples can make output too similar to the sample.</p>
+<h3 id="43-ask-for-a-concise-explanation-and-useful-checks">4.3 Ask for a concise explanation and useful checks</h3>
+<p>For math, planning, or analysis, request the information needed to assess the result: relevant assumptions, key calculations, evidence, and a concise explanation.</p>
+<blockquote><p>&quot;State the assumptions, show the key calculations, and briefly explain why your recommendation follows from the evidence.&quot;</p></blockquote>
+<p>Reasoning models may already work through problems internally. A useful explanation is one you can check; asking for a long internal thought process is not necessary. Evaluate the final answer against the source material and the task requirements.</p>
+<h3 id="44-use-tags-or-delimiters-to-separate-parts">4.4 Use tags or delimiters to separate parts</h3>
+<p>When your prompt has instructions, background text and data all mixed together, the AI can confuse them. Separate them with clear labels. XML-style tags work especially well with Claude, and any consistent naming is fine.</p>
+<pre tabindex="0"><code>&lt;instructions&gt;Summarize the article below in 3 bullet points.&lt;/instructions&gt;
+&lt;article&gt;
+...paste text here...
+&lt;/article&gt;</code></pre>
+<h3 id="45-assign-a-role">4.5 Assign a role</h3>
+<p>&quot;You are a tax accountant,&quot; &quot;You are a patient teacher for 10-year-olds,&quot; &quot;You are a skeptical reviewer.&quot; A role shapes vocabulary, depth and perspective. It helps most for tone and expertise; it is less important with newer reasoning models, which can often start directly from the task.</p>
+<h3 id="46-specify-the-output-format">4.6 Specify the output format</h3>
+<p>Say precisely how you want the answer delivered: a table, a numbered list, JSON, a 3-paragraph email, bullet points under headings. If another program will read the output, give the exact structure.</p>
+<blockquote><p>&quot;Return the result as JSON with the keys: <code>title</code>, <code>summary</code>, <code>priority</code> (high/medium/low).&quot;</p></blockquote>
+<p>Give a small example of the expected output. If your application requires strict JSON, use the model’s supported structured-output feature and validate the result. Assistant-response prefilling depends on the model and is not supported everywhere; an ordinary prompt alone does not guarantee a valid schema.</p>
+<h3 id="47-break-big-tasks-into-steps-prompt-chaining">4.7 Break big tasks into steps (prompt chaining)</h3>
+<p>Instead of one enormous request (&quot;research, write, edit and design my report&quot;), do it in stages: outline first, then review it, then write section by section, then edit. Each step gets full attention, and you can correct course early.</p>
+<h3 id="48-set-constraints-and-permission-to-say-i-dont-know">4.8 Set constraints and permission to say &quot;I don&#39;t know&quot;</h3>
+<ul><li>Length: &quot;no more than 200 words.&quot;</li><li>Scope: &quot;use only the text I provided.&quot;</li><li>Honesty: &quot;If the information is not in the document, say &#39;Not stated&#39; instead of guessing.&quot;</li></ul>
+<p>This instruction sets an appropriate standard, but it is not a guarantee. Check important claims against reliable sources.</p>
+<hr>
+<h2 id="5-a-reusable-master-template">5. A Reusable Master Template</h2>
+<p>Copy, fill in, and adapt:</p>
+<pre tabindex="0"><code>ROLE:
+You are [role / expertise].
+
+TASK:
+[Exact action verb] + [what] + [for whom].
+
+CONTEXT:
+[Background, goal, audience, situation, why this matters.]
+
+INPUT:
+&lt;material&gt;
+[Paste the text, data, or notes to work from.]
+&lt;/material&gt;
+
+FORMAT:
+- Structure: [headings / bullets / table / paragraphs / JSON]
+- Length: [word or item count]
+- Tone and language: [formal / friendly / simple English / Bangla, etc.]
+
+EXAMPLE OF GOOD OUTPUT (optional):
+[Sample]
+
+RULES:
+- Do: [...]
+- Don&#39;t: [...]
+- If unsure or missing information, say so instead of guessing.
+
+BEFORE ANSWERING:
+[Optional: &quot;Ask me up to 3 clarifying questions if anything is unclear.&quot;]</code></pre>
+<hr>
+<h2 id="6-the-iteration-loop-your-first-prompt-is-a-draft">6. The Iteration Loop: Your First Prompt Is a Draft</h2>
+<p>Rarely does the first attempt perfectly match your expectations. Treat prompting as a loop:</p>
+<ol><li><strong>Write</strong> the prompt.</li><li><strong>Run</strong> it and read the result critically.</li><li><strong>Diagnose</strong> what is off: too long? wrong tone? missing facts? wrong structure?</li><li><strong>Fix the prompt, not just the output.</strong> Add the missing instruction or example.</li><li><strong>Repeat</strong> until it works, then <strong>save</strong> the winning prompt as a template.</li></ol>
+<h3 id="diagnosis-cheat-sheet">Diagnosis cheat sheet</h3>
+<div class="blog-table" role="region" aria-label="Comparison table" tabindex="0"><table><thead><tr><th scope="col">Problem</th><th scope="col">Likely cause</th><th scope="col">Fix</th></tr></thead><tbody><tr><td>Too generic</td><td>No context or audience</td><td>Add who it&#39;s for and why</td></tr><tr><td>Wrong tone</td><td>Tone not specified</td><td>State the tone and give a sample</td></tr><tr><td>Too long / too short</td><td>No length limit</td><td>Give a number: &quot;about 150 words&quot;</td></tr><tr><td>Made-up facts</td><td>No source limits</td><td>&quot;Use only the text provided; say if unknown&quot;</td></tr><tr><td>Wrong format</td><td>Format not specified</td><td>Describe the structure or show an example</td></tr><tr><td>Misses part of the request</td><td>Task too big or tangled</td><td>Split into steps or numbered requirements</td></tr><tr><td>Inconsistent from run to run</td><td>Open-ended wording</td><td>Add examples and tighter constraints</td></tr></tbody></table></div>
+<p>You can also ask the AI to help: &quot;Here is my prompt and the result I got. The result was too formal. How should I improve the prompt?&quot;</p>
+<hr>
+<h2 id="7-common-mistakes-to-avoid">7. Common Mistakes to Avoid</h2>
+<ol><li><strong>Vagueness:</strong> &quot;Make it better,&quot; &quot;Write something good.&quot;</li><li><strong>Hidden assumptions:</strong> Knowing your audience, goal or preferences, but never stating them.</li><li><strong>Overloading:</strong> Ten unrelated tasks in one prompt.</li><li><strong>Contradictions:</strong> &quot;Be very detailed but keep it under 50 words.&quot;</li><li><strong>Only saying what not to do:</strong> Tell it what <em>to</em> do instead. (&quot;Write in plain conversational English&quot; works better than &quot;don&#39;t be formal.&quot;)</li><li><strong>No success criteria:</strong> If you can&#39;t describe what a good answer looks like, the AI can&#39;t aim at it. Define it first.</li><li><strong>Blind trust:</strong> Always check facts, numbers, quotes and citations, especially in medical, legal, financial or academic work.</li><li><strong>Sharing sensitive data carelessly:</strong> Don&#39;t paste passwords, personal identification numbers or confidential company data into tools you haven&#39;t checked for privacy.</li></ol>
+<hr>
+<h2 id="8-advanced-tips">8. Advanced Tips</h2>
+<ul><li><strong>Ask the AI to ask you.</strong> &quot;Before you start, ask me any questions you need to produce the best result.&quot; Great for complex or unfamiliar tasks.</li><li><strong>Request a self-check.</strong> &quot;After writing, review your answer against my requirements and list anything you missed.&quot;</li><li><strong>Request alternatives.</strong> &quot;Give me three versions: formal, friendly, and very short.&quot;</li><li><strong>Define your quality bar.</strong> &quot;A good answer would be one a busy manager can read in 30 seconds and act on.&quot;</li><li><strong>Provide reference style.</strong> Paste a paragraph you wrote and say &quot;match this voice.&quot;</li><li><strong>Use system-level or custom instructions</strong> (where your tool allows) to store standing preferences, such as your preferred language, tone and formatting.</li><li><strong>Test across cases.</strong> If you use a prompt repeatedly (for work or an app), try it on several different inputs before trusting it.</li><li><strong>Version your prompts.</strong> Keep a document of your best prompts with notes on what changed and why.</li></ul>
+<hr>
+<h2 id="9-three-ready-to-use-prompt-examples">9. Three Ready-to-Use Prompt Examples</h2>
+<h3 id="91-learning-a-topic">9.1 Learning a topic</h3>
+<blockquote><p>You are a patient tutor. Explain how inflation works to a 16-year-old with no economics background. Use one everyday analogy, then a simple numerical example. Finish with 3 quiz questions (with answers listed separately at the end). Keep the whole response under 500 words.</p></blockquote>
+<h3 id="92-improving-your-own-writing">9.2 Improving your own writing</h3>
+<blockquote><p>You are a professional editor. Improve the clarity and flow of the text below without changing my meaning or voice. Show the edited version first, then a short bulleted list of the 5 most important changes you made and why.<br>&lt;text&gt; ...paste... &lt;/text&gt;</p></blockquote>
+<h3 id="93-planning-a-project">9.3 Planning a project</h3>
+<blockquote><p>You are a project manager. I need to launch a small online store in 6 weeks with a budget of $2,000 and one part-time helper. Create a week-by-week plan in a table with columns: Week, Goals, Tasks, Owner, Estimated Cost. Flag the top 3 risks and how to reduce each. Ask me up to 3 clarifying questions first if anything important is missing.</p></blockquote>
+<hr>
+<h2 id="10-quick-checklist-before-you-press-enter">10. Quick Checklist Before You Press Enter</h2>
+<ul><li><span class="blog-check" aria-hidden="true">□</span> Did I say <strong>who</strong> the AI should be (if it matters)?</li><li><span class="blog-check" aria-hidden="true">□</span> Is the <strong>task</strong> one clear action?</li><li><span class="blog-check" aria-hidden="true">□</span> Did I include the <strong>context and source material</strong> it needs?</li><li><span class="blog-check" aria-hidden="true">□</span> Did I describe the <strong>format, length and tone</strong>?</li><li><span class="blog-check" aria-hidden="true">□</span> Did I give an <strong>example</strong> (if the style matters)?</li><li><span class="blog-check" aria-hidden="true">□</span> Did I set <strong>rules</strong> and allow it to say &quot;I don&#39;t know&quot;?</li><li><span class="blog-check" aria-hidden="true">□</span> Do I know what a <strong>good result</strong> looks like?</li><li><span class="blog-check" aria-hidden="true">□</span> Am I ready to <strong>iterate</strong> and refine?</li></ul>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>Great prompts are not magic words; they are well-organized instructions. The more clearly you describe the role, task, context, format and limits, and the more you show what &quot;good&quot; looks like, the less the AI has to guess, and the closer the result will be to what you imagined. Start simple, test, refine, and save what works. As AI becomes part of everyday work, the ability to communicate precisely with it will be one of the most valuable skills you can build.</p>
+<hr>
+<h2 id="sources-and-notes">Sources and Notes</h2>
+<p>This guide adapts the supplied draft into a practical framework. Prompt effectiveness depends on the task and the model; test the examples on the tool you actually use.</p>
+<ul><li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" target="_blank" rel="noopener noreferrer">Anthropic: prompting best practices</a>.</li><li><a href="https://support.claude.com/en/articles/7996857-my-prompt-isn-t-giving-me-a-helpful-answer" target="_blank" rel="noopener noreferrer">Anthropic: clear, specific requests and iterative refinement</a>.</li><li><a href="https://aws.amazon.com/blogs/machine-learning/prompt-engineering-techniques-and-best-practices-learn-by-doing-with-anthropics-claude-3-on-amazon-bedrock/" target="_blank" rel="noopener noreferrer">AWS: prompt engineering techniques and examples</a>.</li></ul>
+<p>Examples are templates to adapt, not promises of factual correctness. Review the output and validate any format that another application depends on.</p>
+      <nav class="reader-pagination" aria-label="More articles"><a href="../robots-and-human-work/"><span>← Previous article</span><strong>Robots &amp; Human Work</strong></a><a href="../future-of-ai/"><span>Next article →</span><strong>The Future of AI</strong></a></nav>
+      <p class="blog-return"><a href="../../?folder=articles#articles">Explore all articles</a><a href="#article">Back to top ↑</a></p>
+    </div>
+  </article><footer class="reader-footer">Kazi Jawad · Ideas, learning &amp; perspectives</footer></main>
+</body></html>

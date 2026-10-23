@@ -2,6 +2,7 @@ import { cpSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import './build-articles.mjs';
+import './build-blog.mjs';
 import './build-gallery.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));

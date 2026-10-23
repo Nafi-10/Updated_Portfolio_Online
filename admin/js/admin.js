@@ -716,15 +716,15 @@ function renderArticlesPanel() {
     <div class="panel-section active">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
         <div>
-          <h2 class="panel-title" style="margin-bottom: 5px;"><i class="fa-solid fa-folder-closed" style="color: #fbbf24; margin-right: 10px;"></i> Article Folders Directory</h2>
-          <p class="panel-desc">Every folder represents a separate article. Click on any folder to open and edit its content, or click the plus (<b>+</b>) card to create a new article folder.</p>
+          <h2 class="panel-title" style="margin-bottom: 5px;"><i class="fa-solid fa-folder-closed" style="color: #22d3ee; margin-right: 10px;"></i> Articles & Projects Library</h2>
+          <p class="panel-desc">Choose Articles for general reading and PDFs, or Projects for your work. Each item can include documents and multiple images.</p>
         </div>
         <div style="display: flex; gap: 10px;">
           <button onclick="addNewCategoryFromModal()" class="admin-btn admin-btn-secondary">
             <i class="fa-solid fa-plus"></i> New Category
           </button>
           <button onclick="createNewArticleFolder()" class="admin-btn admin-btn-primary">
-            <i class="fa-solid fa-folder-plus"></i> New Article Folder
+            <i class="fa-solid fa-folder-plus"></i> New Library Item
           </button>
         </div>
       </div>
@@ -746,7 +746,7 @@ function renderArticlesPanel() {
         <!-- Plus Icon / New Article Folder Card -->
         <div class="folder-card add-folder-card" onclick="createNewArticleFolder()">
           <i class="fa-solid fa-folder-plus add-folder-icon"></i>
-          <div class="add-folder-text">Add New Article</div>
+          <div class="add-folder-text">Add Article or Project</div>
           <div class="add-folder-sub">Click to open a blank folder</div>
         </div>
 
@@ -755,7 +755,7 @@ function renderArticlesPanel() {
           <div class="folder-card" onclick="openArticleFolder(${idx})">
             <div class="folder-top">
               <i class="fa-solid fa-folder-open folder-icon"></i>
-              <span class="folder-cat-badge">${item.category || 'General'}</span>
+              <span class="folder-cat-badge">${item.collection === 'projects' ? 'Projects' : 'Articles'} / ${item.category || 'General'}</span>
             </div>
             <div>
               <h3 class="folder-title">${item.title || 'Untitled Folder'}</h3>
@@ -791,10 +791,14 @@ function renderArticlesPanel() {
 
         <form id="article-folder-form" onsubmit="event.preventDefault(); saveActiveArticleFolder();">
           <input type="hidden" id="folder-article-index" value="-1" />
+          <div class="admin-form-group">
+            <label class="admin-label" for="folder-art-collection">Portfolio folder</label>
+            <select id="folder-art-collection" class="admin-select"><option value="articles">Articles — topics, reading & PDFs</option><option value="projects">Projects — UI/UX, dashboards, SaaS & other work</option></select>
+          </div>
           
           <div class="form-grid-2">
             <div class="admin-form-group">
-              <label class="admin-label">Article Title</label>
+              <label class="admin-label">Title</label>
               <input type="text" id="folder-art-title" class="admin-input" required placeholder="Enter article title" />
             </div>
             <div class="admin-form-group">
@@ -826,20 +830,33 @@ function renderArticlesPanel() {
             <textarea id="folder-art-excerpt" class="admin-textarea" rows="2" placeholder="Brief summary of the article inside this folder..."></textarea>
           </div>
 
-          <div class="admin-form-group">
-            <label class="admin-label">Full Body Article Content (Markdown / HTML Supported)</label>
-            <div class="article-format-toolbar" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
-              <button type="button" class="admin-btn admin-btn-secondary btn-sm" onclick="insertArticleFormat('**', '**')"><strong>B</strong></button>
-              <button type="button" class="admin-btn admin-btn-secondary btn-sm" onclick="insertArticleFormat('*', '*')"><em>I</em></button>
-              <button type="button" class="admin-btn admin-btn-secondary btn-sm" onclick="insertArticleFormat('### ', '')">H3</button>
-              <button type="button" class="admin-btn admin-btn-secondary btn-sm" onclick="insertArticleFormat('- ', '')">• List</button>
-              <button type="button" class="admin-btn admin-btn-secondary btn-sm" onclick="insertArticleFormat('> ', '')">Quote</button>
-              <button type="button" class="admin-btn admin-btn-secondary btn-sm" onclick="insertArticleFormat('[', '](https://example.com)')">Link</button>
-              <button type="button" class="admin-btn admin-btn-secondary btn-sm" onclick="insertArticleFormat('<code>', '</code>')">Code</button>
+          <div class="form-grid-2">
+            <div class="admin-form-group">
+              <label class="admin-label" for="folder-art-pdf">Main PDF link</label>
+              <input type="text" id="folder-art-pdf" class="admin-input" placeholder="articles/documents/my-document.pdf" />
             </div>
+            <div class="admin-form-group">
+              <label class="admin-label" for="folder-art-href">Read more page (optional)</label>
+              <input type="text" id="folder-art-href" class="admin-input" placeholder="articles/my-project/" />
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="admin-form-group">
+              <label class="admin-label" for="folder-art-images">Image links — one per line</label>
+              <textarea id="folder-art-images" class="admin-textarea" rows="3" placeholder="assets/img/projects/my-project.jpg"></textarea>
+            </div>
+            <div class="admin-form-group">
+              <label class="admin-label" for="folder-art-documents">Additional document links — one per line</label>
+              <textarea id="folder-art-documents" class="admin-textarea" rows="3" placeholder="articles/documents/design-notes.pdf"></textarea>
+            </div>
+          </div>
+          <p class="panel-desc">Use a published file URL or a path to a file included in the project. Local computer paths are not accessible to visitors.</p>
+
+          <div class="admin-form-group">
+            <label class="admin-label" for="folder-art-body">Reading content (plain text, optional)</label>
             <textarea id="folder-art-body" class="admin-textarea" rows="8" placeholder="Write full article body text here..."></textarea>
             <div style="margin-top:8px; font-size:0.82rem; color: var(--text-muted);">
-              Use the buttons above to add Markdown or HTML structure. Example: <code>**bold**</code>, <code>*italic*</code>, <code>&lt;h3&gt;</code>, <code>[link](https://...)</code>.
+              Separate paragraphs with a blank line. For designed articles, set a Read more page above; for formatted documents, add a PDF link.
             </div>
           </div>
 
@@ -925,6 +942,11 @@ function bindArticlesEvents() {
     document.getElementById('folder-art-thumb').value = item.thumbnail || '';
     document.getElementById('folder-art-excerpt').value = item.excerpt || '';
     document.getElementById('folder-art-body').value = item.body || '';
+    document.getElementById('folder-art-collection').value = item.collection || 'articles';
+    document.getElementById('folder-art-pdf').value = item.pdf || '';
+    document.getElementById('folder-art-href').value = item.href || '';
+    document.getElementById('folder-art-images').value = (item.images || []).map(image => typeof image === 'string' ? image : image.src).join('\n');
+    document.getElementById('folder-art-documents').value = (item.documents || []).map(doc => typeof doc === 'string' ? doc : doc.url).join('\n');
 
     const deleteBtn = document.getElementById('folder-modal-delete-btn');
     if (deleteBtn) deleteBtn.style.display = 'inline-flex';
@@ -946,9 +968,11 @@ function bindArticlesEvents() {
     document.getElementById('folder-art-title').value = '';
     document.getElementById('folder-art-cat').value = categories[0] || 'AI';
     document.getElementById('folder-art-date').value = new Date().toISOString().split('T')[0];
-    document.getElementById('folder-art-thumb').value = 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80';
+    document.getElementById('folder-art-thumb').value = '';
     document.getElementById('folder-art-excerpt').value = '';
     document.getElementById('folder-art-body').value = '';
+    document.getElementById('folder-art-collection').value = 'articles';
+    ['pdf', 'href', 'images', 'documents'].forEach(field => { document.getElementById(`folder-art-${field}`).value = ''; });
 
     const deleteBtn = document.getElementById('folder-modal-delete-btn');
     if (deleteBtn) deleteBtn.style.display = 'none';
@@ -1012,13 +1036,19 @@ function bindArticlesEvents() {
     }
 
     const folderData = {
+      ...(idx >= 0 ? currentPortfolioData.articles[idx] : {}),
       id: idx >= 0 ? (currentPortfolioData.articles[idx]?.id || Date.now()) : Date.now(),
       title,
       category,
       date,
       thumbnail,
       excerpt,
-      body
+      body,
+      collection: document.getElementById('folder-art-collection').value,
+      pdf: document.getElementById('folder-art-pdf').value.trim(),
+      href: document.getElementById('folder-art-href').value.trim(),
+      images: document.getElementById('folder-art-images').value.split('\n').map(src => src.trim()).filter(Boolean).map(src => ({ src, alt: currentPortfolioData.articles[idx]?.images?.find(image => image.src === src)?.alt || title })),
+      documents: document.getElementById('folder-art-documents').value.split('\n').map(url => url.trim()).filter(Boolean).map(url => ({ url, title: currentPortfolioData.articles[idx]?.documents?.find(doc => doc.url === url)?.title || url.split('/').pop().replace(/[_-]/g, ' ') }))
     };
 
     if (idx >= 0) {

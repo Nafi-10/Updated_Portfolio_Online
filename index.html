@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/articles.css">
+  <link rel="stylesheet" href="css/library.css">
   <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body class="frosted-glass-theme">
@@ -111,11 +112,12 @@
       </figure>
 
       <div class="about-intro">
-        <p class="about-role"><span aria-hidden="true"></span>Data Analyst / AI Enthusiast / ML Engineer</p>
+        <p class="about-role"><span aria-hidden="true"></span>Business Analyst / Digital Transformation / AI Enthusiast</p>
         <h3 class="about-headline">I build digital <span>experiences</span> that matter.</h3>
         <div class="about-introduction" id="about-bio-text">
-          <p>I'm MD Kazi Jawadul Islam, a B.Sc student in Computing and Information Systems at Daffodil International University, majoring in Artificial Intelligence.</p>
-          <p>Driven by research and innovation, I'm building my path in technology through practical projects, continuous learning, and thoughtful problem-solving.</p>
+          <p>A motivated and detail-oriented Business Analyst with experience in business process analysis, project coordination, digital transformation, and technology-driven business solutions. I have hands-on experience working with CRM, HRM, project management, workflow automation, data collection, reporting, and website development projects, with a strong focus on identifying business requirements and converting them into practical solutions.</p>
+          <p>I am passionate about using technology to improve organizational efficiency, streamline business processes, and support data-driven decision-making. I also have experience contributing to digital marketing, social media management, content planning, and corporate branding initiatives. Alongside my professional experience, I have worked on an AI-based legal research project involving semantic search, document summarization, and data-driven analysis.</p>
+          <p>I am a fast learner, problem solver, and team-oriented professional who continuously seeks opportunities to develop my technical, analytical, and business skills while contributing meaningful value to an organization.</p>
         </div>
         <div class="about-actions">
           <a href="#articles" class="about-work-link">View My Work <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
@@ -384,27 +386,33 @@
     </div>
   </section>
 
-  <!-- [7] ARTICLES & PROJECTS: INDIVIDUAL DOCUMENTS -->
+  <!-- [7] ARTICLES & PROJECTS: GLASS FOLDER LIBRARY -->
   <section id="articles" class="articles-pinterest-section">
     <div class="section-header" data-aos="fade-up">
       <div class="storehouse-badge">
         <span class="storehouse-pulse-dot"></span>
-        <span>Research & Ideas</span>
+        <span>Ideas, collected.</span>
       </div>
       <h2 class="section-title">Articles & Projects</h2>
-      <p class="section-subtitle">Inside the projects: the ideas, the systems, and the details behind them.</p>
+      <p class="section-subtitle">Things I build. Things I learn. Open a folder and take a look.</p>
     </div>
 
-    <div class="article-carousel" id="article-carousel" role="region" aria-roledescription="carousel" aria-label="Project documents">
-      <div class="article-carousel-controls">
-        <button class="article-carousel-arrow" id="article-previous" type="button" aria-label="Previous document" aria-controls="article-columns">←</button>
-        <span class="article-carousel-position" id="article-position" aria-hidden="true">01 / 03</span>
-        <button class="article-carousel-arrow" id="article-next" type="button" aria-label="Next document" aria-controls="article-columns">→</button>
-      </div>
-      <div class="article-columns" id="article-columns"></div>
-      <p class="article-sr-only" id="article-announcement" aria-live="polite" aria-atomic="true"></p>
+    <div class="document-library" id="document-library">
+      <div class="library-folders" id="library-folders" aria-label="Browse Articles and Projects"></div>
+      <p class="library-hint" id="library-hint">Two folders. A growing collection of work and ideas.</p>
+      <div class="library-browser" id="library-browser" hidden></div>
+      <p class="article-sr-only" id="library-announcement" role="status" aria-live="polite"></p>
+      <noscript><p><a href="articles/future-of-ai/">The Future of AI</a> · <a href="articles/robots-and-human-work/">Robots &amp; Human Work</a> · <a href="articles/better-ai-prompts/">A Practical Prompting Guide</a></p><p><a href="articles/nexora/">NEXORA</a> · <a href="articles/security-system/">Security System</a> · <a href="articles/flipbook-catalogue/">Flipbook Catalogue</a> · <a href="articles/maison-velour/">Maison Velour</a> · <a href="articles/hridita-portfolio/">Hridita Portfolio</a> · <a href="articles/3d-building-blueprint/">3D Building Blueprint</a></p></noscript>
     </div>
   </section>
+
+  <dialog class="library-viewer" id="library-viewer" aria-labelledby="library-viewer-title">
+    <div class="library-viewer-bar">
+      <h2 id="library-viewer-title"></h2>
+      <button type="button" class="library-icon-button" id="library-viewer-close" aria-label="Close preview" autofocus>×</button>
+    </div>
+    <div id="library-viewer-content"></div>
+  </dialog>
 
   <!-- [8] GALLERY -->
   <section id="gallery" class="gallery-section" aria-labelledby="gallery-title">
@@ -599,6 +607,7 @@
   <script src="js/typed-config.js"></script>
   <script src="js/quotes.js"></script>
   <script src="js/articles.js"></script>
+  <script src="js/library.js"></script>
   <script src="js/gallery.js"></script>
   <script src="js/main.js"></script>
 </body>
